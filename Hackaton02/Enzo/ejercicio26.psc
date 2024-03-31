@@ -1,4 +1,4 @@
-Proceso Pregunta26
+Algoritmo Pregunta26
 	
     Escribir "Ingrese el dividendo:"
     Leer dividendo
@@ -15,4 +15,4 @@ Proceso Pregunta26
 	
     Escribir "El cociente de la división es: ", cociente
     Escribir "El resto de la división es: ", resto
-FinProceso
+FinAlgoritmo
