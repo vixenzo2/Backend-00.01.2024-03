@@ -1,4 +1,4 @@
-Proceso SumaNumerosNaturales
+Algoritmo Pregunta22
 	
     Escribir("Ingrese el valor de n:")
     Leer n
@@ -10,4 +10,4 @@ Proceso SumaNumerosNaturales
     Fin Para
 	
     Escribir "La suma de los ", n, " primeros números naturales es: ", suma
-FinProceso
+FinAlgoritmo
