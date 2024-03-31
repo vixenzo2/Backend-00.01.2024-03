@@ -1,4 +1,4 @@
-Proceso SumaNumerosParesHastaMil
+Proceso Pregunta24
     suma = 0
 	
     Para i = 2 Hasta 1000 Con Paso 2 Hacer

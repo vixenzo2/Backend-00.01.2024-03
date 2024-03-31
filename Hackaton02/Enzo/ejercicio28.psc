@@ -1,4 +1,4 @@
-Proceso SumaPrimerosCienNumeros
+Proceso Pregunta28
     suma = 0
     contador = 1
 	

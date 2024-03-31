@@ -1,4 +1,4 @@
-Proceso AproximarPiLeibniz
+Proceso Pregunta39
 	
     Escribir("Ingrese la cantidad de términos para aproximar pi:")
     Leer n

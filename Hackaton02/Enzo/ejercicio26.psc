@@ -1,4 +1,4 @@
-Proceso DivisionRestasSucesivas
+Proceso Pregunta26
 	
     Escribir "Ingrese el dividendo:"
     Leer dividendo

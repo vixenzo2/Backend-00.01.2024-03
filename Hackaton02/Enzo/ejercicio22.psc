@@ -1,4 +1,4 @@
-Proceso SumaNumerosNaturales
+Proceso Pregunta22
 	
     Escribir("Ingrese el valor de n:")
     Leer n
