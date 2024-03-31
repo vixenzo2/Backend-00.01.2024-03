@@ -1,4 +1,4 @@
-Algoritmo CalcularSueldoSemanal
+Algoritmo Pregunta6
     Definir horas_trabajadas, sueldo_base, sueldo_total como Entero
 	
     Escribir "Ingrese las horas trabajadas esta semana:"

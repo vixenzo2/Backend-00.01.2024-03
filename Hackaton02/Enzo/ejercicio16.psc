@@ -1,4 +1,4 @@
-Algoritmo DeterminarDiaSemana
+Algoritmo Pregunta16
     Definir numero como Entero
     Definir dia como Carácter
 	Definir es_valido Como Logico

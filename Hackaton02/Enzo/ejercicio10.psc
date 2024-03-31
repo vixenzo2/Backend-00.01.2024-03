@@ -1,4 +1,4 @@
-Algoritmo ParOImpar
+Algoritmo Pregunta10
     Definir numero como Entero
 	
     Escribir "Ingrese un número:"

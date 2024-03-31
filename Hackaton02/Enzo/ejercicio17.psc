@@ -1,4 +1,4 @@
-Algoritmo CalcularHoraSiguiente
+Algoritmo Pregunta17
     Definir hora, minuto, segundo como Entero
 	
     Escribir "Ingrese la hora (formato 24 horas):"

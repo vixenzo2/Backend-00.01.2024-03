@@ -1,4 +1,4 @@
-Proceso OrdenarTresNumeros
+Algoritmo Pregunta4
     Definir num1, num2, num3, menor, medio, mayor como Entero
 	
     Escribir "Ingrese el primer número:"
@@ -39,4 +39,4 @@ Proceso OrdenarTresNumeros
 	Fin Si
 
 	Escribir "Los números ordenados de menor a mayor son: ", menor, ", ", medio, ", ", mayor
-FinProceso
+FinAlgoritmo

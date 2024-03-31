@@ -1,4 +1,4 @@
-Algoritmo MayorDeDosNumeros
+Algoritmo Pregunta12
     Definir num1, num2, mayor como Entero
 
     Escribir "Ingrese el primer número:"

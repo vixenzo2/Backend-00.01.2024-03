@@ -1,4 +1,4 @@
-Algoritmo MayorDeTresNumeros
+Algoritmo Pregunta11
     Definir num1, num2, num3, mayor como Entero
 	
     Escribir "Ingrese el primer número:"

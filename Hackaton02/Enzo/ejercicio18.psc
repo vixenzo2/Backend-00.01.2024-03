@@ -1,4 +1,4 @@
-Algoritmo CalcularPrecioYGanancia
+Algoritmo Pregunta18
     Definir cantidad_cd, precio_unitario, precio_total_cliente como Entero
     Definir ganancia_porcentaje, ganancia_vendedor como Real
 	

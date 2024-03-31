@@ -1,4 +1,4 @@
-Algoritmo CalcularPrecioCompra
+Algoritmo Pregunta5
     Definir cantidad_zapatos, precio_unitario, precio_total, descuento_porcentaje, precio_con_descuento como Entero
 	
     Escribir "Ingrese la cantidad de zapatos a comprar:"

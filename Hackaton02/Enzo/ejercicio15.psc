@@ -1,4 +1,4 @@
-Algoritmo ConversionMedidas
+Algoritmo Pregunta15
     Definir centimetros, pulgadas, libras, kilogramos como Real
 	
     Escribir "Ingrese la longitud en centímetros:"

@@ -1,4 +1,4 @@
-Algoritmo DeterminarAumentoSalario
+Algoritmo Pregunta9
     Definir salario_actual, aumento, salario_nuevo como Real
 	
     Escribir "Ingrese el salario actual del trabajador:"

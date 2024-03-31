@@ -1,4 +1,4 @@
-Proceso DeterminarNegativo
+Algoritmo Pregunta2
     Definir numero como Entero
 	
     Escribir "Ingrese un número:"
@@ -9,4 +9,4 @@ Proceso DeterminarNegativo
     Sino
         Escribir "El número ", numero, " no es negativo"
     Fin Si
-FinProceso
+FinAlgoritmo

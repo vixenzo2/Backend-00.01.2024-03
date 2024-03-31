@@ -1,4 +1,4 @@
-Algoritmo CalcularPromedioYEstado
+Algoritmo Pregunta8
     Definir nota1, nota2, nota3, promedio como Real
 	
     Escribir("Ingrese la primera nota:")

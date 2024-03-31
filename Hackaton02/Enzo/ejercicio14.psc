@@ -1,4 +1,4 @@
-Algoritmo DeterminarPrimo
+Algoritmo Pregunta14
     Definir numero, i, conteo como Entero
     Definir es_primo como Logico
 	

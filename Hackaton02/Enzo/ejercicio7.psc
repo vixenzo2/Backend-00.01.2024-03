@@ -1,4 +1,4 @@
-Algoritmo CalcularDescuentoHelado
+Algoritmo Pregunta7
     Definir tipo_membresia como Carácter
     Definir precio_helado, descuento, precio_total como Real
 	

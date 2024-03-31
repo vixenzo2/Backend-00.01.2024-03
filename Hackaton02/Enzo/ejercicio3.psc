@@ -1,4 +1,4 @@
-Proceso TerminaEnCuatro
+Algoritmo Pregunta3
     Definir numero, ultimo_digito como Entero
 	
     Escribir "Ingrese un número:"
@@ -11,4 +11,4 @@ Proceso TerminaEnCuatro
     Sino
         Escribir "El número ", numero, " no termina en 4."
     Fin Si
-FinProceso
+FinAlgoritmo

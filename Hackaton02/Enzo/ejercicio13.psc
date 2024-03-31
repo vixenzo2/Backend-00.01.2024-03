@@ -1,4 +1,4 @@
-Algoritmo EsVocal
+Algoritmo Pregunta13
     Definir letra como Carácter
 	
     Escribir "Ingrese una letra:"

@@ -1,4 +1,4 @@
-Proceso DeterminarTresDigitos
+Algoritmo Pregunta1
     Definir numero como Entero
 	
     Escribir "Ingrese un número:"
@@ -9,4 +9,4 @@ Proceso DeterminarTresDigitos
     Sino
         Escribir "El número ", numero, " no tiene tres dígitos."
     Fin Si
-FinProceso
+FinAlgoritmo
