@@ -16,10 +16,19 @@ Luis
 Juan Diego
 
 
-<<<<<<< HEAD
+
 Antony
+Kevin
+Carlos
+
+Test
+
 
 Hector
-=======
+
+
+
+Hector
+
 Antony
->>>>>>> fuentes/main
+
