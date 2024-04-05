@@ -6,6 +6,9 @@ function ejecutar(nroEjercicio) {
         case 2:
             ejecicio2();
             break;
+            case 3:
+                ejecicio2();
+                break;
         default:
             break;
     }
