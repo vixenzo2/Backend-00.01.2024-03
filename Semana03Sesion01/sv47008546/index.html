@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <h2 class="title">Hackaton03</h2>   
+<div class="list">
+    <h5>
+        1.Hacer un algoritmo en JavaScritp que lea un numero
+        por el teclado y determinar si tiene tres digitos.
+
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+        <input id="number" type="number" 
+        class="custom-input" placeholder="Ingrese un numero" />
+    <button>Validar</button>
+    </div>
+</div>
+</body>
+<script>
+    const $btn = document.getElementById('btn-read-number')
+    const $number = document.getElementById('number')
+    $btn.addEventListener('click', () => {
+  if (!$number.value.lenght || $number.value.lenght == 0)
+    {
+        return alert('Ingrese numero a validar')
+    }    
+    
+    if ($number.value.lenght > 3 ) {
+    alert('El numero ingresador tiene mas de 3 cifras')
+   } else {
+    
+   alert('El numero ingresado no tiene 3 cifras')
+        console.log($number.value)
+    }
+  })
+</script>
+</html>
