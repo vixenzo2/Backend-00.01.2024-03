@@ -12,6 +12,7 @@ body {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0);
         opacity: 1;
@@ -32,7 +33,7 @@ h2 {
     font-size: 1.5em;
     font-weight: bold;
     color: #555;
-    margin: 15px 0;    
+    margin: 15px 0;
 }
 
 .container {
@@ -72,9 +73,11 @@ button:hover {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -83,4 +86,3 @@ button:hover {
 .button-container button {
     animation: bounce 2s ease infinite;
 }
-
