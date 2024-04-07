@@ -1,42 +1,294 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=”stylesheet” href=”style.css”>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-light.min.css">
-    <title>Document</title>
+    <script>
+        function myFunction1() {
+            document.getElementById("demo7").innerHTML = "Paragraph changed.";
+        }
+    </script>
 </head>
 
 <body>
-    <h2 class="title">Hackaton03</h2>
-    <div class="list">
-        <h5>
-            1.Hacer un algoritmo en JavaScritp que lea un numero
-            por el teclado y determinar si tiene tres digitos.
+    // comillas dobles
+    <h2>What Can JavaScript Do?</h2>
+    <p id="demo">JavaScript can change HTML content.</p>
 
-        </h5>
-        <div class="divider"></div>
-        <div class="container-example">
-            <input id="number" type="number" class="custom-input" placeholder="Ingrese un numero" />
-            <button id="btn-read-number">Validar</button>
-        </div>
-        <pre>
-            <code>
-      if($number.value.length > 3 ) {
-        alert('El numero ingresado tiene mas de 3 cifras.')
-      } else {
-        alert('No tiene 3 cifras')
-      }
-            </code>
-          </pre>
-    </div>
+    <button type="button" onclick='document.getElementById("demo").innerHTML ="Hello JavaScript!"'>Click Me!</button>
+
+    // comillas simples
+    <h2>What Can JavaScript Do?</h2>
+    <p id="demo2">JavaScript can change HTML content.</p>
+
+    <button type="button" onclick="document.getElementById('demo2').innerHTML = 'Hello JavaScript!'">Click Me!</button>
+
+    // Cambiar valores de atributos
+    <h2>What Can JavaScript Do?</h2>
+    <p>JavaScript can change HTML attribute values.</p>
+    <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+    <button onclick="document.getElementById('myImage').src='img/pic_bulbon.gif'">Turn on the light</button>
+    <img id="myImage" src="img/pic_bulbon.gif" style="width:100px">
+    <button onclick="document.getElementById('myImage').src='img/pic_bulboff.gif'">Turn off the light</button>
+
+    // Puede cambiar el formato del texto
+    <h2>What Can JavaScript Do?</h2>
+    <p id="demo3">JavaScript can change the style of an HTML element.</p>
+
+    <button type="button" onclick="document.getElementById('demo3').style.fontSize='35px'">Click Me!</button>
+
+    // Puede ocultar el texto del HTML con Style Display
+    <h2>What Can JavaScript Do?</h2>
+    <p id="demo4">JavaScript can hide HTML elements.</p>
+
+    <button type="button" onclick="document.getElementById('demo4').style.display='none'">Click Me!</button>
+
+    // Puede mostrar el texto oculto de HTML con Style Display
+    <h2>What Can JavaScript Do?</h2>
+    <p>JavaScript can show hidden HTML elements.</p>
+
+    <p id="demo5" style="display:none">Hello JavaScript!</p>
+    <button type="button" onclick="document.getElementById('demo5').style.display='block'">Click Me!</button>
+
+    //Puedo insertar/Reemplazar etiquetas Script dentro de una etiqueta HTML "id"
+    <h2>JavaScript in Body</h2>
+    <p id="demo6"></p>
+    <script>
+        document.getElementById("demo6").innerHTML = "My First JavaScript";
+    </script>
+
+    //Se puede insertar la etiqueta Script en la cabecera (Lo que modificara el cuerpo)
+    <h2>Demo JavaScript in Head</h2>
+    <p id="demo7">A Paragraph.</p>
+    <button type="button" onclick="myFunction1()">Try it</button>
+
+
+    // Se puede insertar la etiqueta Scritp directamente en el cuerpo y modificara o reemplazara una etiqueta HTML
+    <h2>Demo JavaScript in Body</h2>
+    <p id="demo8">A Paragraph.</p>
+
+    <button type="button" onclick="myFunction2()">Try it</button>
+    <script>
+        function myFunction2() {
+            document.getElementById("demo8").innerHTML = "Paragraph changed.";
+        }
+    </script>
+
+    //Modificando el texto con un Script externo (ubicado en otro archivo) a traves de un link
+    <h2>Demo External JavaScript</h2>
+    <p id="demo9">A Paragraph.</p>
+
+    <button type="button" onclick="myFunction()">Try it</button>
+
+    <p>This example links to "myScript.js".</p>
+    <p>(myFunction is stored in "myScript.js")</p>
+    <script src="index.js"></script>
+
+    //JavaScript puede "mostrar" datos de diferentes maneras: Escribir en un elemento HTML usando inner.html
+    <h2>My First Web Page</h2>
+    <p>My First Paragraph.</p>
+    <p id="demo10"></p>
+
+    <script>
+        document.getElementById("demo10").innerHTML = 5 + 6;
+    </script>
+
+    //JavaScript puede "mostrar" datos de diferentes maneras: Usando documento.write()
+    <h2>My First Web Page</h2>
+    <p>My first paragraph.</p>
+    <p>Never call document.write after the document has finished loading.
+        It will overwrite the whole document.</p>
+
+    <script>
+        document.write(5 + 6);
+    </script>
+
+    //El uso de document.write() después de cargar un documento HTML eliminará todo el HTML existente: Ejemplo
+    <h2>My First Web Page</h2>
+    <p>My first paragraph.</p>
+
+    <button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+    //JavaScript puede "mostrar" datos de diferentes maneras: Usando ventana.alert()
+    <h2>My First Web Page</h2>
+    <p>My first paragraph.</p>
+
+    <script>
+        window.alert(5 + 6);
+    </script>
+
+    //JavaScript puede "mostrar" datos de diferentes maneras: Puede omitir la palabra clave: "window"
+    <h2>My First Web Page</h2>
+    <p>My first paragraph.</p>
+
+    <script>
+        alert(5 + 6);
+    </script>
+
+    //JavaScript puede "mostrar" datos de diferentes maneras: Usando consola.log()
+
+    <h2>Activate Debugging</h2>
+
+    <p>F12 on your keyboard will activate debugging.</p>
+    <p>Then select "Console" in the debugger menu.</p>
+    <p>Then click Run again.</p>
+
+    <script>
+        console.log(5 + 6);
+    </script>
+
+    //boton para mandar a imprimir la ventana actual
+    <h2>The window.print() Method</h2>
+    <p>Click the button to print the current page.</p>
+
+    <button onclick="window.print()">Print this page</button>
+
+    //Declaraciones en JavaScript
+    <h2>JavaScript Statements</h2>
+    <p>A <b>JavaScript program</b> is a list of <b>statements</b> to be executed by a computer.</p>
+    <p id="demo11"></p>
+
+    <script>
+        let x, y, z;  // Statement 1
+        x = 5;        // Statement 2
+        y = 6;        // Statement 3
+        z = x + y;    // Statement 4
+
+        document.getElementById("demo11").innerHTML =
+            "The value of z is " + z + ".";  
+    </script>
+
+
+    //Estamos insertando un texto con la etiqueta script / a traves de Declaraciones
+    <h2>JavaScript Statements</h2>
+    <p>In HTML, JavaScript statements are executed by the browser.</p>
+    <p id="demo12"></p>
+
+    <script>
+        document.getElementById("demo12").innerHTML = "Hello Dolly.";
+    </script>
+
+    //El punto y coma separa las declaraciones de JavaScript. Agregue un punto y coma al final de cada declaración
+    ejecutable.
+
+    <h2>JavaScript Statements</h2>
+    <p>JavaScript statements are separated by semicolons.</p>
+    <p id="demo13"></p>
+
+    <script>
+        let a, b, c;
+        a = 5;
+        b = 6;
+        c = a + b;
+        document.getElementById("demo13").innerHTML = c;
+    </script>
+
+    //Cuando están separados por punto y coma, se permiten varias declaraciones en una línea:
+    <h2>JavaScript Statements</h2>
+    <p>Multiple statements on one line are allowed.</p>
+    <p id="demo14"></p>
+
+    <script>
+        let a1, b1, c1;
+        a1 = 5; b1 = 6; c1 = a1 + b1;
+        document.getElementById("demo14").innerHTML = c;
+    </script>
+
+    //Si una declaración de JavaScript no cabe en una línea, el mejor lugar para dividirla es después de un operador:
+    <h2>JavaScript Statements</h2>
+    <p>The best place to break a code line is after an operator or a comma.</p>
+    <p id="demo15"></p>
+
+    <script>
+        document.getElementById("demo15").innerHTML =
+            "Hello Dolly!";
+    </script>
+
+
+//Las declaraciones de JavaScript se pueden agrupar en bloques de código, dentro de llaves {...}.El propósito de los bloques de código 
+//es definir declaraciones que se ejecutarán juntas.
+    <h2>JavaScript Statements</h2>
+    <p>JavaScript code blocks are written between { and }</p>
+    <button type="button" onclick="myFunction3()">Click Me!</button>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+
+    <script>
+        function myFunction3() {
+            document.getElementById("demo16").innerHTML = "Hello Dolly!";
+            document.getElementById("demo17").innerHTML = "How are you?";
+        }
+    </script>
+
+//Valores de JavaScript: Literales de JavaScript, Los números se escriben con o sin decimales:
+<h2>JavaScript Numbers</h2>
+<p>Number can be written with or without decimals.</p>
+<p id="demo18"></p>
+
+<script>
+document.getElementById("demo18").innerHTML = 10.50;
+</script>
+
+//Valores de JavaScript: Literales de JavaScript, Las cadenas son texto, escrito entre comillas dobles o simples:
+<h2>JavaScript Strings=texto</h2>
+<p>Strings can be written with double or single quotes.</p>
+<p id="demo19"></p>
+
+<script>
+document.getElementById("demo19").innerHTML = 'John Doe';
+</script>
+
+//En un lenguaje de programación, las variables se utilizan para almacenar valores de datos.
+//Se utiliza un signo igual para asignar valores a las variables.//
+
+<h2>JavaScript Variables</h2>
+<p>In this example, x is defined as a variable.
+Then, x is assigned the value of 6:</p>
+<p id="demo20"></p>
+
+<script>
+let x1;
+x1 = 6;
+document.getElementById("demo20").innerHTML = x1;
+</script>
+
+//Usando operadores arimetmeticos
+<h2>JavaScript Operators</h2>
+<p>JavaScript uses arithmetic operators to compute values (just like algebra).</p>
+<p id="demo21"></p>
+
+<script>
+document.getElementById("demo21").innerHTML = (5 + 6) * 10;
+</script>
+
+<!--Las expresiones se calculan en valores.-->
+<h2>JavaScript Expressions</h2>
+<p>Expressions compute to values.</p>
+<p id="demo22"></p>
+
+<script>
+document.getElementById("demo22").innerHTML = 5 * 10;
+</script>
+
+<!--Las expresiones también pueden contener valores en variables:-->
+<h2>JavaScript Expressions</h2>
+<p>Expressions compute to values.</p>
+<p id="demo23"></p>
+
+<script>
+var x;
+x = 5;
+document.getElementById("demo23").innerHTML = x * 10;
+</script>
+
+<!-- Los valores pueden ser de varios tipos, como números y cadenas. -->
+<h2>JavaScript Expressions</h2>
+<p>Expressions compute to values.</p>
+<p id="demo24"></p>
+
+<script>
+document.getElementById("demo24").innerHTML = "John" + " "  + "Doe";
+</script>
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-
-<script src="index.js"></script>
 
 </html>

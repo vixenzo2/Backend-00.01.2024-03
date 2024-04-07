@@ -1,15 +1,9 @@
-const $btn = document.getElementById('btn-read-number')
-const $number = document.getElementById('number')
-
-$btn.addEventListener('click', () => {
-  
-  if (!$number.value.length || $number.value.length == 0) {
-    return alert('Ingrese numero a validar')
-  } 
-
-  if($number.value.length > 3 ) {
-    alert('El numero ingresado tiene mas de 3 cifras.')
-  } else {
-    alert('No tiene 3 cifras')
+function myFunction() {
+    document.getElementById("demo9").innerHTML = "Paragraph changed.";
   }
-})
+  
+ //let a, b, c;  // Declare 3 variables
+ // a = 5;        // Assign the value 5 to a
+ // b = 6;        // Assign the value 6 to b
+ // c = a + b;    // Assign the sum of a and b to c
+ 
