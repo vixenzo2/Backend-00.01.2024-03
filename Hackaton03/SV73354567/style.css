@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, #d3f5c8, #d2eeee);
+    padding-left: 25px;
 }
 
 @keyframes slideIn {
@@ -11,7 +12,6 @@ body {
         transform: translateX(-100%);
         opacity: 0;
     }
-
     100% {
         transform: translateX(0);
         opacity: 1;
@@ -30,13 +30,9 @@ h1.titulo {
 
 h2 {
     font-size: 1.5em;
-
     font-weight: bold;
-
     color: #555;
-
-    margin: 15px 0;
-
+    margin: 15px 0;    
 }
 
 .container {
@@ -47,13 +43,9 @@ h2 {
 
 p {
     font-size: 1em;
-
     line-height: 1.4;
-
     color: #333;
-
     margin: 10px 0;
-
 }
 
 button {
@@ -80,11 +72,9 @@ button:hover {
     0% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-10px);
     }
-
     100% {
         transform: translateY(0);
     }

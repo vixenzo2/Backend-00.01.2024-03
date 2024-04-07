@@ -125,6 +125,7 @@ function ejecutar(nroEjercicio) {
     }
 }
 
+
 function ejercicio1() {
     let numero = Number.parseInt(prompt("Escribe tu numero"));
     console.log(numero)
@@ -141,6 +142,7 @@ function ejercicio1() {
     }
     console.log("Ejercicio 1")
 }
+
 
 function ejercicio2() {
     let numero = Number.parseInt(prompt("Por favor, ingresa un número entero:"));
@@ -161,6 +163,7 @@ function ejercicio2() {
     console.log("Ejercicio 2")
 }
 
+
 function ejercicio3() {
     let numero = Number.parseInt(prompt("Escribe tu numero"));
     if (!isNaN(numero)) {
@@ -174,6 +177,7 @@ function ejercicio3() {
     }
     console.log("Ejercicio 3")
 }
+
 
 function ejercicio4() {
     let numero1 = Number.parseInt(prompt("Ingresa el primer número"));
@@ -205,27 +209,26 @@ function ejercicio4() {
     }
 }
 
+
 function ejercicio5() {
     let cantidadZapatos = Number.parseInt(prompt("Ingrese la cantidad de zapatos que desea comprar:"));
-
     const precioPorZapato = 80;
     let totalCompra = cantidadZapatos * precioPorZapato;
-
     if (!isNaN(cantidadZapatos) && cantidadZapatos > 0) {
         if (cantidadZapatos > 10 && cantidadZapatos <= 20) {
-            totalCompra *= 0.9; // Aplicar descuento del 10%
+            totalCompra *= 0.9;
         } else if (cantidadZapatos > 20 && cantidadZapatos < 30) {
-            totalCompra *= 0.8; // Aplicar descuento del 20%
+            totalCompra *= 0.8;
         } else if (cantidadZapatos >= 30) {
-            totalCompra *= 0.6; // Aplicar descuento del 40%
+            totalCompra *= 0.6;
         }
-
         alert(`El total a pagar es: $${totalCompra}`);
     } else {
         alert("Por favor, ingrese una cantidad válida de zapatos.");
     }
     console.log("Ejercicio 5")
 }
+
 
 function ejercicio6() {
     let horasTrabajadas = Number.parseInt(prompt("Ingrese el número de horas trabajadas en la semana:"));
@@ -244,8 +247,9 @@ function ejercicio6() {
         alert("Por favor, ingrese un número válido de horas trabajadas.");
     }
     console.log("Ejercicio 6")
-
 }
+
+
 function ejercicio7() {
     let tipoMembresia = prompt("Ingrese el tipo de membresía (A, B o C):").toUpperCase();
     let precioHelado = 100;
@@ -270,6 +274,7 @@ function ejercicio7() {
     console.log("Ejercicio 7")
 }
 
+
 function ejercicio8() {
     let nota1 = parseFloat(prompt("Ingrese la primera nota:"));
     let nota2 = parseFloat(prompt("Ingrese la segunda nota:"));
@@ -286,6 +291,7 @@ function ejercicio8() {
     }
     console.log("Ejercicio 8");
 }
+
 
 function ejercicio9() {
     let salario = parseFloat(prompt("Ingrese el salario del trabajador en dólares:"));
@@ -304,6 +310,7 @@ function ejercicio9() {
     console.log("Ejercicio 9");
 }
 
+
 function ejercicio10() {
     let numero = parseInt(prompt("Ingrese un número:"));
     if (!isNaN(numero)) {
@@ -318,42 +325,247 @@ function ejercicio10() {
     console.log("Ejercicio 10");
 }
 
+
 function ejercicio11() {
+let numero1 = parseFloat(prompt("Ingrese el primer número:"));
+let numero2 = parseFloat(prompt("Ingrese el segundo número:"));
+let numero3 = parseFloat(prompt("Ingrese el tercer número:"));
+if (!isNaN(numero1) && !isNaN(numero2) && !isNaN(numero3)) {
+    let mayor = numero1;
+    if (numero2 > mayor) {
+        mayor = numero2;
+    }
+    if (numero3 > mayor) {
+        mayor = numero3;
+    }
+    alert(`El mayor número ingresado es: ${mayor}`);
+} else {
+    alert("Por favor, ingrese tres números válidos.");
+}
     console.log("Ejercicio 11");
 }
+
+
 function ejercicio12() {
+    let numero1 = parseFloat(prompt("Ingrese el primer número:"));
+let numero2 = parseFloat(prompt("Ingrese el segundo número:"));
+if (!isNaN(numero1) && !isNaN(numero2)) {
+    if (numero1 > numero2) {
+        alert(`El primer número (${numero1}) es mayor que el segundo número (${numero2}).`);
+    } else if (numero2 > numero1) {
+        alert(`El segundo número (${numero2}) es mayor que el primer número (${numero1}).`);
+    } else {
+        alert("Los dos números son iguales.");
+    }
+} else {
+    alert("Por favor, ingrese dos números válidos.");
+}
     console.log("Ejercicio 12");
 }
 
+
 function ejercicio13() {
+    let letra = prompt("Ingrese una letra:");
+letra = letra.toLowerCase();
+if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
+    alert(`La letra ${letra} es una vocal.`);
+} else {
+    alert(`La letra ${letra} no es una vocal.`);
+}
     console.log("Ejercicio 13");
 }
 
+
 function ejercicio14() {
+    let numero = parseInt(prompt("Ingrese un número entero positivo entre 1 y 10 (excluyendo el 9):"));
+if (numero >= 1 && numero <= 10 && numero !== 9) {
+    let esPrimo = true;
+    for (let i = 2; i <= Math.sqrt(numero); i++) {
+        if (numero % i === 0) {
+            esPrimo = false;
+            break;
+        }
+    }
+    if (esPrimo) {
+        alert("El número ingresado es primo.");
+    } else {
+        alert("El número ingresado no es primo.");
+    }
+} else {
+    alert("El número ingresado no está en el rango permitido o es igual a 9.");
+}
     console.log("Ejercicio 14");
 }
+
+
 function ejercicio15() {
+    function centimetrosAPulgadas() {
+        let centimetros = prompt("Ingrese la longitud en centímetros:");
+        if (!isNaN(centimetros)) {
+            let pulgadas = centimetros / 2.54;
+            alert(centimetros + " centímetros son aproximadamente " + pulgadas + " pulgadas.");
+        } else {
+            alert("Por favor ingrese un número válido.");
+        }
+    }
+    function librasAKilogramos() {
+        let libras = prompt("Ingrese el peso en libras:");
+        if (!isNaN(libras)) {
+            let kilogramos = libras * 0.453592;
+            alert(libras + " libras son aproximadamente " + kilogramos + " kilogramos.");
+        } else {
+            alert("Por favor ingrese un número válido.");
+        }
+    }
+    centimetrosAPulgadas();
+    librasAKilogramos();
     console.log("Ejercicio 15");
 }
 
 function ejercicio16() {
+    function indicarDia(numero) {
+    let dia;
+    switch (numero) {
+        case 1:
+            dia = "Lunes";
+            break;
+        case 2:
+            dia = "Martes";
+            break;
+        case 3:
+            dia = "Miércoles";
+            break;
+        case 4:
+            dia = "Jueves";
+            break;
+        case 5:
+            dia = "Viernes";
+            break;
+        case 6:
+            dia = "Sábado";
+            break;
+        case 7:
+            dia = "Domingo";
+            break;
+        default:
+            dia = "Número inválido, ingrese un número del 1 al 7";
+            break;
+    }
+    return dia;
+}
+let numero = parseInt(prompt("Ingrese un número del 1 al 7:"));
+if (!isNaN(numero) && numero >= 1 && numero <= 7) {
+    let nombreDia = indicarDia(numero);
+    alert("El día correspondiente al número " + numero + " es " + nombreDia + ".");
+} else {
+    alert("Número inválido, por favor ingrese un número del 1 al 7.");
+}
     console.log("Ejercicio 16");
 }
+
+
 function ejercicio17() {
-    console.log("Ejercicio 17");
+    let hora = parseInt(prompt("Ingrese la hora actual en formato HH (0-23):"));
+let minuto = parseInt(prompt("Ingrese los minutos actuales en formato MM (0-59):"));
+let segundo = parseInt(prompt("Ingrese los segundos actuales en formato SS (0-59):"));
+if (!isNaN(hora) && !isNaN(minuto) && !isNaN(segundo)) {    
+    if ((hora >= 0 && hora <= 23) && (minuto >= 0 && minuto <= 59) && (segundo >= 0 && segundo <= 59)) {        
+        segundo++;        
+        if (segundo === 60) {
+            segundo = 0;
+            minuto++;
+            if (minuto === 60) {
+                minuto = 0;
+                hora++;
+                if (hora === 24) {
+                    hora = 0;
+                }
+            }
+        }        
+        alert(`La hora dentro de un segundo será: ${hora.toString().padStart(2, '0')}:${minuto.toString().padStart(2, '0')}:${segundo.toString().padStart(2, '0')}`);
+    } else {
+               alert("Al menos una de las entradas no está en el rango permitido.");
+    }
+} else {
+        alert("Al menos una de las entradas no es un número válido.");
 }
+console.log("Ejercicio 17");
+}
+
 
 function ejercicio18() {
-    console.log("Ejercicio 18");
+let cantidad = parseInt(prompt("Ingrese la cantidad de CDs a vender:"));
+if (!isNaN(cantidad) && cantidad > 0) {
+    let precioUnitario;   
+    if (cantidad >= 1 && cantidad <= 9) {
+        precioUnitario = 10;
+    } else if (cantidad >= 10 && cantidad <= 99) {
+        precioUnitario = 8;
+    } else if (cantidad >= 100 && cantidad <= 499) {
+        precioUnitario = 7;
+    } else {
+        precioUnitario = 6;
+    }   
+    let precioTotalCliente = cantidad * precioUnitario;   
+    let gananciaVendedor = precioTotalCliente * 0.0825;    
+    alert(`Precio total para el cliente: $${precioTotalCliente.toFixed(2)}`);
+    alert(`Ganancia para el vendedor: $${gananciaVendedor.toFixed(2)}`);
+} else {
+        alert("La cantidad ingresada no es válida.");
+}
+console.log("Ejercicio 18");
 }
 
+
 function ejercicio19() {
+    const salariosDiarios = {
+        1: 56, // Cajero
+        2: 64, // Servidor
+        3: 80, // Preparador de mezclas
+        4: 48  // Mantenimiento
+    };       
+    let idEmpleado = parseInt(prompt("Ingrese el número identificador del empleado (1 - Cajero, 2 - Servidor, 3 - Preparador de mezclas, 4 - Mantenimiento):"));
+    let diasTrabajados = parseInt(prompt("Ingrese la cantidad de días trabajados en la semana (1 - 6):"));
+   if (!isNaN(idEmpleado) && !isNaN(diasTrabajados) && idEmpleado >= 1 && idEmpleado <= 4 && diasTrabajados >= 1 && diasTrabajados <= 6) {
+                let salarioDiario = salariosDiarios[idEmpleado];
+        let salarioSemanal = salarioDiario * diasTrabajados;            
+        alert(`El salario semanal para el empleado es: $${salarioSemanal}`);
+    } else {        
+        alert("Las entradas ingresadas no son válidas.");
+    }
     console.log("Ejercicio 19");
 }
 
+
 function ejercicio20() {
-    console.log("Ejercicio 20");
+    let num1 = parseInt(prompt("Ingrese el primer número entero positivo:"));
+let num2 = parseInt(prompt("Ingrese el segundo número entero positivo:"));
+let num3 = parseInt(prompt("Ingrese el tercer número entero positivo:"));
+let num4 = parseInt(prompt("Ingrese el cuarto número entero positivo:"));
+if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3) && !isNaN(num4) && num1 > 0 && num2 > 0 && num3 > 0 && num4 > 0) {
+    let numerosPares = 0;
+    if (num1 % 2 === 0) numerosPares++;
+    if (num2 % 2 === 0) numerosPares++;
+    if (num3 % 2 === 0) numerosPares++;
+    if (num4 % 2 === 0) numerosPares++;
+    let mayor = Math.max(num1, num2, num3, num4);  
+    let cuadradoSegundo = (num3 % 2 === 0) ? Math.pow(num2, 2) : null;   
+    let media = (num1 < num4) ? (num1 + num2 + num3 + num4) / 4 : null;    
+    let sumaTotal = null;
+    if (num2 > num3 && num3 >= 50 && num3 <= 700) {
+        sumaTotal = num1 + num2 + num3 + num4;
+    }
+    alert(`Cantidad de números pares: ${numerosPares}`);
+    alert(`El mayor de los números es: ${mayor}`);
+    if (cuadradoSegundo !== null) alert(`El cuadrado del segundo número es: ${cuadradoSegundo}`);
+    if (media !== null) alert(`La media de los números es: ${media}`);
+    if (sumaTotal !== null) alert(`La suma total de los números es: ${sumaTotal}`);
+} else {    
+    alert("Por favor, ingrese números enteros positivos.");
 }
+console.log("Ejercicio 20");
+}
+
 
 function ejercicio21() {
     console.log("Ejercicio 21");
