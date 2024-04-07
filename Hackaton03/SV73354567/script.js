@@ -161,34 +161,160 @@ function ejercicio2() {
     console.log("Ejercicio 2")
 }
 
-
-
-
-
 function ejercicio3() {
+    let numero = Number.parseInt(prompt("Escribe tu numero"));
+    if (!isNaN(numero)) {
+        if (numero % 10 === 4 || numero % 10 === -4) {
+            alert("El número termina en 4.");
+        } else {
+            alert("El número NO termina en 4.");
+        }
+    } else {
+        alert("Lo que ingresaste no es un número.");
+    }
     console.log("Ejercicio 3")
 }
+
 function ejercicio4() {
+    let numero1 = Number.parseInt(prompt("Ingresa el primer número"));
+    let numero2 = Number.parseInt(prompt("Ingresa el segundo número"));
+    let numero3 = Number.parseInt(prompt("Ingresa el tercer número"));
     console.log("Ejercicio 4")
+    if (!isNaN(numero1) && !isNaN(numero2) && !isNaN(numero3)) {
+        if (numero1 <= numero2 && numero1 <= numero3) {
+            if (numero2 <= numero3) {
+                alert(`Los números ordenados de menor a mayor son: ${numero1}, ${numero2}, ${numero3}`);
+            } else {
+                alert(`Los números ordenados de menor a mayor son: ${numero1}, ${numero3}, ${numero2}`);
+            }
+        } else if (numero2 <= numero1 && numero2 <= numero3) {
+            if (numero1 <= numero3) {
+                alert(`Los números ordenados de menor a mayor son: ${numero2}, ${numero1}, ${numero3}`);
+            } else {
+                alert(`Los números ordenados de menor a mayor son: ${numero2}, ${numero3}, ${numero1}`);
+            }
+        } else {
+            if (numero1 <= numero2) {
+                alert(`Los números ordenados de menor a mayor son: ${numero3}, ${numero1}, ${numero2}`);
+            } else {
+                alert(`Los números ordenados de menor a mayor son: ${numero3}, ${numero2}, ${numero1}`);
+            }
+        }
+    } else {
+        alert("Por favor, ingresa números válidos.");
+    }
 }
+
 function ejercicio5() {
+    let cantidadZapatos = Number.parseInt(prompt("Ingrese la cantidad de zapatos que desea comprar:"));
+
+    const precioPorZapato = 80;
+    let totalCompra = cantidadZapatos * precioPorZapato;
+
+    if (!isNaN(cantidadZapatos) && cantidadZapatos > 0) {
+        if (cantidadZapatos > 10 && cantidadZapatos <= 20) {
+            totalCompra *= 0.9; // Aplicar descuento del 10%
+        } else if (cantidadZapatos > 20 && cantidadZapatos < 30) {
+            totalCompra *= 0.8; // Aplicar descuento del 20%
+        } else if (cantidadZapatos >= 30) {
+            totalCompra *= 0.6; // Aplicar descuento del 40%
+        }
+
+        alert(`El total a pagar es: $${totalCompra}`);
+    } else {
+        alert("Por favor, ingrese una cantidad válida de zapatos.");
+    }
     console.log("Ejercicio 5")
 }
+
 function ejercicio6() {
+    let horasTrabajadas = Number.parseInt(prompt("Ingrese el número de horas trabajadas en la semana:"));
+    const salarioBasePorHora = 20;
+    const salarioHoraExtra = 25;
+    if (!isNaN(horasTrabajadas) && horasTrabajadas >= 0) {
+        if (horasTrabajadas <= 40) {
+            let salarioSemanal = horasTrabajadas * salarioBasePorHora;
+            alert(`El salario semanal es: $${salarioSemanal}`);
+        } else {
+            let horasExtras = horasTrabajadas - 40;
+            let salarioSemanal = (40 * salarioBasePorHora) + (horasExtras * salarioHoraExtra);
+            alert(`El salario semanal es: $${salarioSemanal}`);
+        }
+    } else {
+        alert("Por favor, ingrese un número válido de horas trabajadas.");
+    }
     console.log("Ejercicio 6")
+
 }
 function ejercicio7() {
+    let tipoMembresia = prompt("Ingrese el tipo de membresía (A, B o C):").toUpperCase();
+    let precioHelado = 100;
+    if (tipoMembresia === 'A' || tipoMembresia === 'B' || tipoMembresia === 'C') {
+        let descuento = 0;
+        switch (tipoMembresia) {
+            case 'A':
+                descuento = 0.1;
+                break;
+            case 'B':
+                descuento = 0.15;
+                break;
+            case 'C':
+                descuento = 0.2;
+                break;
+        }
+        let precioConDescuento = precioHelado * (1 - descuento);
+        alert(`El precio del helado con descuento para la membresía ${tipoMembresia} es: $${precioConDescuento}`);
+    } else {
+        alert("Tipo de membresía inválido. Por favor, ingrese A, B o C.");
+    }
     console.log("Ejercicio 7")
 }
 
 function ejercicio8() {
+    let nota1 = parseFloat(prompt("Ingrese la primera nota:"));
+    let nota2 = parseFloat(prompt("Ingrese la segunda nota:"));
+    let nota3 = parseFloat(prompt("Ingrese la tercera nota:"));
+    if (!isNaN(nota1) && !isNaN(nota2) && !isNaN(nota3)) {
+        let promedio = (nota1 + nota2 + nota3) / 3;
+        if (promedio >= 11) {
+            alert(`El promedio es ${promedio.toFixed(2)}. ¡El estudiante aprobó!`);
+        } else {
+            alert(`El promedio es ${promedio.toFixed(2)}. El estudiante no aprobó.`);
+        }
+    } else {
+        alert("Al menos una de las entradas no es un número válido. Por favor, ingrese solo números.");
+    }
     console.log("Ejercicio 8");
 }
 
 function ejercicio9() {
+    let salario = parseFloat(prompt("Ingrese el salario del trabajador en dólares:"));
+    if (!isNaN(salario)) {
+        let aumento;
+        if (salario > 2000) {
+            aumento = salario * 0.05;
+        } else {
+            aumento = salario * 0.10;
+        }
+        let nuevoSalario = salario + aumento;
+        alert(`El aumento es de $${aumento.toFixed(2)} y el nuevo salario es de $${nuevoSalario.toFixed(2)}.`);
+    } else {
+        alert("Por favor, ingrese un salario válido.");
+    }
     console.log("Ejercicio 9");
 }
+
 function ejercicio10() {
+    let numero = parseInt(prompt("Ingrese un número:"));
+    if (!isNaN(numero)) {
+        if (numero % 2 === 0) {
+            alert(`El número ${numero} es par.`);
+        } else {
+            alert(`El número ${numero} es impar.`);
+        }
+    } else {
+        alert("Por favor, ingrese un número válido.");
+    }
     console.log("Ejercicio 10");
 }
 
