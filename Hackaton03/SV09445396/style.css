@@ -1,0 +1,12 @@
+body {
+    background-color: cornflowerblue;
+    color: azure;
+}
+p{
+    font-size: 20px;
+    font-weight: bold;
+}
+button{
+    padding: 5px 20px 5px 20px ; 
+    font-size: 20px;
+}
