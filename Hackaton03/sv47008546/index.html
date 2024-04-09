@@ -14,6 +14,7 @@
 <body>
   <h2 class="title">hackaton03</h2>
 
+  <!--Ejercicio 1-->
   <div class="list">
     <h5>
       1.- Hacer un algoritmo en JavaScript que lea un número por el teclado y determinar si tiene tres dígitos.
@@ -35,6 +36,262 @@ if($number.value.length == 3 ) {
       </code>
     </pre>
   </div>
+
+  <!-- En Index HTML se utiliza la variable asignada para la codificación y en java se utiliza la variable declarada-->
+  <!--Ejercicio 2-->
+  <div class="list">
+    <h5>
+      2. Hacer un algoritmo en JavaScript que lea un número entero por el teclado y determinar si es negativo.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <input id="number-entero" type="number" class="custom-input" placeholder="Ingrese numero" />
+      <button id="btn-read-number-2">Validar</button>
+    </div>
+
+    <pre>
+      <code>
+        if($numberEntero.value >= 0) {
+          alert('El numero ingresado NO es negativo')
+        } else {
+          alert('El numero ingresado SI es negativo')
+        }
+      </code>
+    </pre>
+  </div>
+
+  <!--Para insertar Modulo se coloca la letra "% + numero de residuo que esperamos-->
+  <!--Ejercicio 3-->
+  <div class="list">
+    <h5>
+      3. Hacer un algoritmo en JavaScript que lea un número y determinar si termina en 4.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <input id="ultimo-digito" type="number" class="custom-input" placeholder="Ingrese numero" />
+      <button id="btn-read-number-3">Validar</button>
+    </div>
+
+    <pre>
+      <code>
+        if($ultimoDigito.value%10==4){
+          alert('El numero ingresado termina en 4')
+        }else 
+        {
+        alert('El numero ingresado no termina en 4')
+      }
+      </code>
+    </pre>
+  </div>
+
+
+  <!--Ejercicio 4-->
+  <div class="list">
+    <h5>
+      4. Hacer un algoritmo en JavaScript que lea tres números enteros y los muestre de menor a mayor.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="Ordenado()">Validar</button>
+      <h5 id="numbers"></h5>
+      <h5 id="result"></h5>
+    </div>
+    <!-- <h5><div id="numero-ordenado4"></div></h5>
+    <h5><div id="numero-resultado4"></div></h5>
+    <script src="/Hackaton03/sv47008546/index.js"></script> -->
+
+    <pre>
+      <code>
+        if (numero4_1 >= numero4_2 && numero4_1 >= numero4_3 && numero4_2 >= numero4_3) {
+          $resultadoOrden4.textContent = 'El orden es:' ${numero4_1}, ${numero4_2}, ${numero4_3};
+        } else if (numero4_1 >= numero4_2 && numero4_1 >= numero4_3 && numero4_2 <= numero4_3) {
+          $resultadoOrden4.textContent = 'El orden es:' ${numero4_1}, ${numero4_3}, ${numero4_2};
+      
+        } else if (numero4_2 >= numero4_1 && numero4_2 >= numero4_3 && numero4_1 >= numero4_3) {
+          $resultadoOrden4.textContent = `El orden es: ${numero4_2}, ${numero4_1}, ${numero4_3}`;
+        } else if (numero4_2 >= numero4_1 && numero4_2 >= numero4_3 && numero4_1 <= numero4_3) {
+          $resultadoOrden4.textContent = `El orden es: ${numero4_2}, ${numero4_3}, ${numero4_1}`;
+      
+        } else if (numero4_3 >= numero4_1 && numero4_3 >= numero4_2 && numero4_1 >= numero4_2) {
+          $resultadoOrden4.textContent = `El orden es: ${numero4_3}, ${numero4_1}, ${numero4_2}`;
+        } else if (numero4_3 >= numero4_1 && numero4_3 >= numero4_2 && numero4_1 <= numero4_2) {
+          $resultadoOrden4.textContent = `El orden es: ${numero4_3}, ${numero4_2}, ${numero4_1}`;
+        }   
+        $numeroOrden4.textContent = `los números introducidos son ${numero4_1}, ${numero4_2}, ${numero4_3}`;  
+      </code>
+    </pre>
+  </div>
+
+
+  <!--Para insertar Modulo se coloca la letra % + numero de residuo que esperamos, podemos hallar numeros pares, numeros que terminan en X-->
+  <!--Ejercicio 5-->
+  <div class="list">
+    <h5>
+      5. Hacer un algoritmo en JavaScript para una tienda de zapatos que tiene una promoción de descuento para vender al
+      mayor,
+      esta dependerá del número de zapatos que se compren. Si son más de diez, se les dará un 10% de descuento sobre el
+      total de
+      la compra; si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; y
+      si son más
+      treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="ventaZapato()">Validar</button>
+      <h5 id="cantidadZ"></h5>
+      <h5 id="result5"></h5>
+    </div>
+
+    <pre>
+      <code>
+        if (cantidadZapato == 0) {
+          alert('El numero ingresado no es valido, ingrese un numero por favor')
+        }
+        if (cantidadZapato > 10) {
+          totalPago = (80 * cantidadZapato) * 0.9
+          result4.textContent = `El total a pagar es: ${totalPago}`
+        } else if (cantidadZapato <= 10) {
+          totalPago = cantidadZapato * 80
+        }
+        result4.textContent = `El total a pagar es: ${totalPago}`
+        if (cantidadZapato > 20 && cantidadZapato < 30) {
+          totalPago = (80 * cantidadZapato) * 0.8
+          result4.textContent = `El total a pagar es: ${totalPago}`
+        } else if (cantidadZapato > 30) {
+          totalPago = (80 * cantidadZapato) * 0.6
+          result4.textContent = `El total a pagar es: ${totalPago}`
+        }
+        cantidadZ.textContent = `La cantidad comprada es: ${cantidadZapato}`
+      }
+      </code>
+    </pre>
+  </div>
+
+
+  <!--Ejercicio 6-->
+  <div class="list">
+    <h5>
+      6. Hacer un algoritmo en JavaScript para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que
+      si trabaja 40 horas
+      o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas entonces las horas extras se le pagarán a $25
+      por hora.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="sueldoTrabajador()">Validar</button>
+      <h5 id="horaTrabajada"></h5>
+      <h5 id="result6"></h5>
+    </div>
+
+    <pre>
+    <code>
+      if (horas <= 40) {
+        pagoSueldo = (horas * 20)
+        result6.textContent = `El total del sueldo a pagar es: $ ${pagoSueldo}`
+      } else if (horas > 40) {
+        pagoSueldo = 800 + ((horas - 40) * 25)
+        result6.textContent = `El total del sueldo a pagar es: $ ${pagoSueldo}`
+      }
+      horaTrabajada.textContent = `El total de horas trabajada es:  ${horas}`   
+    
+    </code>
+  </pre>
+  </div>
+
+
+  <!--Ejercicio 7-->
+  <div class="list">
+    <h5>
+      7. (Revisar validacion) Hacer un algoritmo en JavaScript para una tienda de helado que da un descuento por compra
+      a sus clientes con membresía dependiendo de su tipo, sólo existen tres tipos de membresía, tipo A, tipo B y tipo
+      C.
+      Los descuentos son los siguientes:
+
+      Tipo A 10% de descuento
+      Tipo B 15% de descuento
+      Tipo C 20% de descuento
+
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="descuentoHelado()">Validar</button>
+      <h5 id="result7"></h5>
+    </div>
+
+    <pre>
+    <code>
+      if (membresia == "A"){
+        descHelado = "10%"
+        result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
+      } if (membresia == "B") {
+        descHelado = "15%"
+        result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
+      } else if (membresia == "C"){
+        descHelado = "20%"
+        result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
+      }
+    
+    </code>
+  </pre>
+  </div>
+
+
+  <!--Ejercicio 8-->
+  <div class="list">
+    <h5>
+      8. Hacer un algoritmo en JavaScript para calcular el promedio de tres notas y determinar si el estudiante aprobó o
+      no.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="promedioAlumno()">Validar</button>
+      <h5 id="notaObtenida"></h5>
+      <h5 id="result8"></h5>
+    </div>
+
+    <pre>
+  <code>
+    if (promedioAlumn > 10){
+      result8.textContent = `Usted tiene nota aprobatoria`
+  } else if (promedioAlumn < 10) {
+    result8.textContent = `Usted No tiene nota aprobatoria`
+    }
+    notaObtenida.textContent = `Usted tiene como promedio la nota de: ${promedioAlumn}`
+     </code>
+</pre>
+  </div>
+
+  <!--Ejercicio 9-->
+  <div class="list">
+    <h5>
+      9. Hacer un algoritmo en JavaScript para determinar el aumento de un trabajador, se debe tomar en
+      cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%.
+
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="aumentoTrabajador()">Validar</button>
+      <h5 id="result9"></h5>
+    </div>
+
+    <pre>
+  <code>
+    if (membresia == "A"){
+      descHelado = "10%"
+      result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
+    } if (membresia == "B") {
+      descHelado = "15%"
+      result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
+    } else if (membresia == "C"){
+      descHelado = "20%"
+      result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
+    }
+  
+  </code>
+</pre>
+  </div>
+
+
 
   <!-- ejercicio 16 -->
 
@@ -81,9 +338,9 @@ for(let i = 1; i <= number; i++) {
       </pre>
   </div>
 
-   <!-- ejercicio 24 -->
+  <!-- ejercicio 24 -->
 
-   <div class="list">
+  <div class="list">
     <h5>
       24.- Hacer un algoritmo en JavaScript para realizar la suma de todos los números pares hasta el 1000.
     </h5>

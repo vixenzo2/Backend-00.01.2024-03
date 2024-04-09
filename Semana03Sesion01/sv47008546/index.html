@@ -275,9 +275,9 @@ document.getElementById("demo22").innerHTML = 5 * 10;
 <p id="demo23"></p>
 
 <script>
-var x;
-x = 5;
-document.getElementById("demo23").innerHTML = x * 10;
+var x2;
+x2 = 5;
+document.getElementById("demo23").innerHTML = x2 * 10;
 </script>
 
 <!-- Los valores pueden ser de varios tipos, como números y cadenas. -->
@@ -288,6 +288,70 @@ document.getElementById("demo23").innerHTML = x * 10;
 <script>
 document.getElementById("demo24").innerHTML = "John" + " "  + "Doe";
 </script>
+
+<!-- Variables no declaradas, ojo al final se debe colocar el operador "+" para que lo reconozca como numero-->
+<h1>JavaScript Variables</h1>
+<p>In this example, x, y, and z are undeclared.</p>
+<p>They are automatically declared when first used.</p>
+<p id="demo25"></p>
+
+<script>
+x3 = 5;
+y3 = 6;
+z3 = x3 + y3;
+document.getElementById("demo25").innerHTML =
+"The value of z is: " + z3;
+</script>
+
+<!-- Las cadenas se escriben entre comillas y Los números se escriben sin comillas.-->
+<h1>JavaScript Variables</h1>
+<p>Strings(cadenas) are written with quotes(comillas simples o dobles).</p>
+<p>Numbers are written without quotes(comillas).</p>
+<p id="demo26"></p>
+
+<script>
+const pi = 3.14;
+let person = "John Doe";
+let answer = 'Yes I am!';
+
+document.getElementById("demo26").innerHTML =
+pi + "<br>" + person + "<br>" + answer;
+</script>
+
+<!-- creamos una variable llamada carNamey le asignamos el valor "Volvo".-->
+<h1>JavaScript Variables</h1>
+<p>Create a variable, assign a value to it, and display it:</p>
+<p id="demo27"></p>
+
+<script>
+let carName = "Volvo";
+document.getElementById("demo27").innerHTML = carName;
+</script>
+
+<!-- Observamos dos declaraciones para una misma variable, sin embargo esta se quedara con el valor asignado en la primera -->
+<h1>JavaScript Variables</h1>
+<p>If you re-declare a JavaScript variable, it will not lose its value.</p>
+<p id="demo28"></p>
+
+<script>
+var carName2 = "Volvo";
+var carName2;
+document.getElementById("demo28").innerHTML = carName2;
+</script>
+
+
+<!--El signo de dólar se trata como una letra en los nombres de JavaScript-->
+<h1>JavaScript Variables</h1>
+<p>The dollar sign is treated as a letter in JavaScript names.</p>
+<p id="demo29"></p>
+
+<script>
+let $$$ = 2;
+let $myMoney = 5;
+document.getElementById("demo29").innerHTML = $$$ + $myMoney;
+</script>
+
+
 
 </body>
 
