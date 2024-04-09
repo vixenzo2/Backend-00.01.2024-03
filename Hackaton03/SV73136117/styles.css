@@ -1,0 +1,38 @@
+html {
+    box-sizing: border-box;
+  }
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+body{
+    background-color: #212F3C;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.wrapper button{
+    width: 20%;
+    padding: 25px;
+    font-size: 18px;
+    background-color: #283747;
+    color: white;
+    transition: background-color 300ms;
+    text-align: center;
+    cursor: pointer;
+}
+.wrapper button:hover{
+    background-color: #212F3C;
+    color: white;
+}
+.wrapper .alert{
+    font-size: 14px;
+    color: lightgreen;
+    display: block;
+}
+.wrapper .console{
+    font-size: 14px;
+    color: yellow;
+    display: block;
+}
