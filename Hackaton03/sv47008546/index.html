@@ -272,26 +272,141 @@ if($number.value.length == 3 ) {
     <div class="container-example">
       <button onclick="aumentoTrabajador()">Validar</button>
       <h5 id="result9"></h5>
+
     </div>
 
     <pre>
   <code>
-    if (membresia == "A"){
-      descHelado = "10%"
-      result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
-    } if (membresia == "B") {
-      descHelado = "15%"
-      result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
-    } else if (membresia == "C"){
-      descHelado = "20%"
-      result7.textContent=`Usted tiene un descuento de ${descHelado} por tener membresia tipo ${membresia}`
-    }
-  
+    if (sueldo > 2000){
+      sueldoFinal= sueldo + (sueldo * 0.05)
+      result9.textContent = `Su nuevo sueldo sera de ${sueldoFinal} obteniendo un aumento del 5%`
+    } else if (sueldo < 2000){
+      sueldoFinal = sueldo + (sueldo * 0.1)
+      result9.textContent = `Su nuevo sueldo sera de ${sueldoFinal} obteniendo un aumento del 10%`
+      }     
   </code>
 </pre>
   </div>
 
+  <!--Ejercicio 10-->
+  <div class="list">
+    <h5>
+      10. Hacer un algoritmo en JavaScript que diga si un número es par o impar.
 
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="numeroParImpar()">Validar</button>
+      <h5 id="result10"></h5>
+
+    </div>
+
+    <pre>
+    <code>
+      if (incognita % 2 == 0 ){
+        result10.textContent = `Su numero ingresado "${incognita}" es Par`;
+       } else 
+       result10.textContent = `Su numero ingresado "${incognita}" es Impar`      
+    </code>
+  </pre>
+  </div>
+
+  <!--Ejercicio 11-->
+  <div class="list">
+    <h5>
+      11. Hacer un algoritmo en JavaScript que lea tres números y diga cuál es el mayor.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="numeroMayor()">Validar</button>
+      <h5 id="numbers2"></h5>
+      <h5 id="result11"></h5>
+    </div>
+
+    <pre>
+      <code>
+        if (nume1 >= nume2 && nume1 >= nume3) {
+          result11.textContent = `El numero mayor de los tres numeros es: ${nume1}`
+        } else if (nume2 >= nume1 && nume2 >= nume3) {
+          result11.textContent = `El numero mayor de los tres numeros es: ${nume2}`
+        } if (nume3 >= nume1 && nume3 >= nume2) {
+          result11.textContent = `El numero mayor de los tres numeros es: ${nume3}`
+        }
+        numbers2.textContent = `los números introducidos son ${nume1}, ${nume2}, ${nume3}`;     
+      </code>
+    </pre>
+  </div>
+
+  <!--Ejercicio 12-->
+  <div class="list">
+    <h5>
+      12. Hacer un algoritmo en JavaScript que lea dos números y diga cuál es el mayor.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="numeroMayor2()">Validar</button>
+      <h5 id="numbers3"></h5>
+      <h5 id="result12"></h5>
+    </div>
+
+    <pre>
+    <code>
+      if (numer1 > numer2) {
+        result12.textContent = `El numero mayor de los dos numeros es: ${numer1}`
+      } if (numer2 > numer1) {
+        result12.textContent = `El numero mayor de los dos numeros es: ${numer2}`
+      } else if (numer1 == numer2){
+        result12.textContent = `${numer1} y ${numer2} Ambos numeros son iguales`
+      }
+      numbers3.textContent = `los números introducidos son ${numer1}, ${numer2}`    
+    </code>
+  </pre>
+  </div>
+
+
+  <!--Ejercicio 13-->
+  <div class="list">
+    <h5>
+      13. Hacer un algoritmo en JavaScript que lea una letra y diga si es una vocal.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="vocalOletra()">Validar</button>
+      <h5 id="result13"></h5>
+
+    </div>
+
+    <pre>
+    <code>
+      if (valor1 == "a" || valor1 == "A" || valor1 == "e" || valor1 == "E" || valor1 == "i" || valor1 == "I" || valor1 == "O" ||valor1 == "o" || valor1 == "u" || valor1 == "U" )
+      result13.textContent = `la letra ingresada "${valor1}" es una vocal`
+      else
+      result13.textContent = `la letra ingresada "${valor1}" No es una vocal`
+    </code>
+  </pre>
+  </div>
+
+   <!--Ejercicio 14-->
+   <div class="list">
+    <h5>
+      14. Hacer un algoritmo en JavaScript que lea un entero positivo del 1 al diez y determine si es un número primo.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="vocalOletra()">Validar</button>
+      <h5 id="result13"></h5>
+
+    </div>
+
+    <pre>
+    <code>
+      if (valor1 == "a" || valor1 == "A" || valor1 == "e" || valor1 == "E" || valor1 == "i" || valor1 == "I" || valor1 == "O" ||valor1 == "o" || valor1 == "u" || valor1 == "U" )
+      result13.textContent = `la letra ingresada "${valor1}" es una vocal`
+      else
+      result13.textContent = `la letra ingresada "${valor1}" No es una vocal`
+    </code>
+  </pre>
+  </div>
 
   <!-- ejercicio 16 -->
 
