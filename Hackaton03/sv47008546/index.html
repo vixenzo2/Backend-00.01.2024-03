@@ -393,17 +393,28 @@ if($number.value.length == 3 ) {
     </h5>
     <div class="divider"></div>
     <div class="container-example">
-      <button onclick="vocalOletra()">Validar</button>
-      <h5 id="result13"></h5>
+      <button onclick="esPrimo()">Validar</button>
+      <h5 id="result14"></h5>
 
     </div>
 
     <pre>
     <code>
-      if (valor1 == "a" || valor1 == "A" || valor1 == "e" || valor1 == "E" || valor1 == "i" || valor1 == "I" || valor1 == "O" ||valor1 == "o" || valor1 == "u" || valor1 == "U" )
-      result13.textContent = `la letra ingresada "${valor1}" es una vocal`
-      else
-      result13.textContent = `la letra ingresada "${valor1}" No es una vocal`
+      if (typeof numeroPrimo != 'number') {
+        return result14.textContent = `El argumento debe ser un numero entero y NO una letra`
+      }
+      if (numeroPrimo <= 1) {
+        return result14.textContent = `El argumento debe ser un numero entero POSITIVO`
+      }
+      var raiz14 = Math.floor(Math.sqrt(numeroPrimo)) + 1;
+      for (var i = 2; i < raiz14; ++i) {
+        if (numeroPrimo % i == 0) {
+    
+          return result14.textContent = `El numero ingresado ${numeroPrimo} No es Primo`;
+        }
+    
+      }
+      return result14.textContent = `El numero ingresado ${numeroPrimo} es Primo`
     </code>
   </pre>
   </div>

@@ -33,6 +33,8 @@ const result12 = document.getElementById("result12")
 
 const result13 = document.getElementById("result13")
 
+const result14 = document.getElementById("result14")
+
 const $btn35 = document.getElementById('btn-read-number-35')
 const $textOpacity = document.getElementById('list-numbers-opacity');
 const $opacity = document.getElementById('opacity-list')
@@ -251,21 +253,52 @@ function numeroMayor2(numer1, numer2) {
     result12.textContent = `El numero mayor de los dos numeros es: ${numer1}`
   } if (numer2 > numer1) {
     result12.textContent = `El numero mayor de los dos numeros es: ${numer2}`
-  } else if (numer1 == numer2){
+  } else if (numer1 == numer2) {
     result12.textContent = `${numer1} y ${numer2} Ambos numeros son iguales`
   }
   numbers3.textContent = `los números introducidos son ${numer1}, ${numer2}`
 }
 
 //! Ejercicio 13
-function vocalOletra(valor1){
-var valor1 = prompt('Ingrese la letra de su preferencia')
+function vocalOletra(valor1) {
+  var valor1 = prompt('Ingrese la letra de su preferencia')
 
-if (valor1 == "a" || valor1 == "A" || valor1 == "e" || valor1 == "E" || valor1 == "i" || valor1 == "I" || valor1 == "O" ||valor1 == "o" || valor1 == "u" || valor1 == "U" )
-result13.textContent = `la letra ingresada "${valor1}" es una vocal`
-else
-result13.textContent = `la letra ingresada "${valor1}" No es una vocal`
+  if (valor1 == "a" || valor1 == "A" || valor1 == "e" || valor1 == "E" || valor1 == "i" || valor1 == "I" || valor1 == "O" || valor1 == "o" || valor1 == "u" || valor1 == "U")
+    result13.textContent = `la letra ingresada "${valor1}" es una vocal`
+  else
+    result13.textContent = `la letra ingresada "${valor1}" No es una vocal`
 }
+
+//! Ejercicio 14
+function esPrimo(numeroPrimo) {
+
+  var numeroPrimo = parseInt(prompt('Ingrese un numero'))
+
+  if (typeof numeroPrimo != 'number') {
+    return result14.textContent = `El argumento debe ser un numero entero y NO una letra`
+  }
+  if (numeroPrimo <= 1) {
+    return result14.textContent = `El argumento debe ser un numero entero POSITIVO`
+  }
+  var raiz14 = Math.floor(Math.sqrt(numeroPrimo)) + 1;
+  for (var i = 2; i < raiz14; ++i) {
+    if (numeroPrimo % i == 0) {
+
+      return result14.textContent = `El numero ingresado ${numeroPrimo} No es Primo`;
+    }
+
+  }
+  return result14.textContent = `El numero ingresado ${numeroPrimo} es Primo`
+}
+
+//try {
+//console.log(esPrimo(9));
+//} catch (e) {
+// console.log(`Error: ${e.message}`)
+//}
+
+
+
 
 //! Ejercicio 16
 
