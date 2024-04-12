@@ -72,6 +72,9 @@
 
 
 let arrClientes =[];
+let arrDespachos = [];
+var $table = $('#table');
+var $tableDespachos = $('#tableDespachos');
 const Heladeria = function () //a
 {
     let Nombre;
@@ -81,6 +84,12 @@ const Heladeria = function () //a
         document.getElementById("direccion").innerText = Direccion;
     }
     function eventos(){
+        
+        $table.bootstrapTable({data: arrClientes})
+        $tableDespachos.bootstrapTable({data: arrDespachos})
+        
+
+
         let btnCrearCliente = document.getElementById("crearCliente");
         btnCrearCliente.addEventListener("click", crearCliente)
 
@@ -90,12 +99,24 @@ const Heladeria = function () //a
         })
         document.getElementById("verOrdenes").addEventListener("click",(e)=>{
             e.preventDefault();
-            var $table = $('#table')
-            $table.bootstrapTable({data: arrClientes})
+            
+            $table.bootstrapTable('load', arrClientes)
+            //$table.bootstrapTable({data: arrClientes})
             document.getElementById("tblOrdenes").style.display = "block";
         })
-    }
+        document.getElementById("verDespachos").addEventListener("click",(e)=>{
+            e.preventDefault();
+            
+            $tableDespachos.bootstrapTable('load', arrDespachos)
+            //$table.bootstrapTable({data: arrClientes})
+            document.getElementById("tblDespachos").style.display = "block";
+        })
+        
 
+       
+        
+    }
+    
     function crearCliente(){
         let nombre = prompt("Escribe tu Nombre");
         let documento = prompt("Escribe tu documento");
@@ -106,6 +127,7 @@ const Heladeria = function () //a
             documento,
             telefono,
             helado : {},
+            estado : true,
             comprarHelado(){
                 let sabor = prompt("Escoje tu sabor")
                 let tamano = prompt("Escoje tu tamaño")
@@ -132,6 +154,8 @@ const Heladeria = function () //a
         document.getElementById("toppisHelado").value = obj.helado.toppis;
 
     }
+
+    
     return {
         init: function (parametros) {
             console.log(parametros)
@@ -143,8 +167,41 @@ const Heladeria = function () //a
     };
 }();
 
+function operateFormatter(value, row, index) {
+    if(row.estado){
+    return [
+      '<a class="like" href="javascript:void(0)" id="btnDespachar" title="Like">',
+      '<i class="fa fa-heart">Despachar</i>',
+      '</a>  '
+    ].join('')
+}
+  }
 
+  window.operateEvents = {
+    'click .like': function (e, value, row, index) {
+        despacharHelado(row)
+      //alert('You click like action, row: ' + JSON.stringify(row))
+    },
+    'click .remove': function (e, value, row, index) {
+      $table.bootstrapTable('remove', {
+        field: 'id',
+        values: [row.id]
+      })
+    }
+  }
 
+  function despacharHelado(obj){
+    console.log(arrClientes);
+    arrDespachos.push(obj);
+    const index = arrClientes.indexOf(obj);
+    console.log(index);
+    if (index > -1) { // only splice array when item is found
+        arrClientes.splice(index, 1); // 2nd parameter means remove one item only
+    }
+    console.log(arrClientes);
+    $table.bootstrapTable('load', arrClientes);
+    console.log(obj);   
+  }
 /**
  * Vender Helados
  * Comprar Insumos
