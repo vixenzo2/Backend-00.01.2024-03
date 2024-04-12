@@ -96,15 +96,16 @@ const $maxNumber = document.getElementById('num-max')
 const result36 = document.getElementById("result36")
 const result36b = document.getElementById("result36b")
 
-
-const $btn40 = document.getElementById('btn-read-number-40')
-const $textPi = document.getElementById('text-pi');
+const result37 = document.getElementById("result37")
 
 const $btn38 = document.getElementById('btn-read-number-38')
 const $numberPerfect = document.getElementById('number-perfect')
 const $textPerfect = document.getElementById('num-perfect')
 
+const result39 = document.getElementById("result39")
 
+const $btn40 = document.getElementById('btn-read-number-40')
+const $textPi = document.getElementById('text-pi');
 
 
 
@@ -124,9 +125,7 @@ $btn.addEventListener('click', () => {
 
 //! Ejercicio 02 <!--De esta forma, voy directo a la funcion sin haber asignado valor a mis variables -->
 $btn2.addEventListener('click', function () {
-  if ($numberEntero.value % 2 == 0) {
-    return alert('El numero ingresado debe ser entero')
-  }
+  
   if ($numberEntero.value >= 0) {
     alert('El numero ingresado NO es negativo')
   }
@@ -825,25 +824,37 @@ result36b.textContent=`Los primeros ${nNumero}, terminos de la serie fibonacci s
 result36.textContent =`${cSerie}`
 }
 
+//! Ejercicio 37
+function ejercicio37() {
+let nNum1 = Number.parseInt(prompt(`Ingresar primer numero:`));
+let nNum2 = Number.parseInt(prompt(`Ingresar segundo numero:`));
+let nNumX = 0;
+let nNum  = 0;
+let cMCD  = "";
 
+if (isNaN(nNum1) || isNaN(nNum2)) {
+  return alert("¡ Se ingreso un numero invalido !");
+}
 
-//! Ejercicio 40
-$btn40.addEventListener('click', () => {
-  if ($numbeNilakantha.value.length == 0) {
-    return alert('Ingrese numero a validar')
-  }
+if (nNum1 > nNum2) {
+  nNumX = nNum1;
+  nNum1 = nNum2;
+  nNum2 = nNumX;
+}
 
-  let pi = 3;
-  let signo = 1;
+cMCD= cMCD + `A=${nNum1}\nB=${nNum2}\n\n`
+let nResiduo = nNum1 % nNum2;
 
-  for (let i = 2; i <= 2 * $numbeNilakantha.value; i += 2) {
-    pi += 4 / (i * (i + 1) * (i + 2)) * signo;
+while (nResiduo > 0) {
+  nNum = nNum2;
+  nNum2 = nResiduo;
+  nNum1 = nNum;
+  nResiduo = nNum1 % nNum2;
+}
 
-    signo += -1
-  }
-  $textPi.innerHTML = pi.toString()
-})
-
+cMCD = cMCD + `El M.C.D es: ${nNum2}`
+alert(cMCD);
+}
 
 //! Ejercicio 38
 $btn38.addEventListener('click', () => {
@@ -867,6 +878,54 @@ $btn38.addEventListener('click', () => {
     $textPerfect.innerHTML = `El ${number} no es perfecto`
   }
 })
+
+
+//! Ejercicio 39
+function aproximacion() {
+
+  let nNumero = Number.parseInt(prompt(`Ingresar numero de veces:`));
+
+  if (isNaN(nNumero)) {
+      return alert("¡ Se ingreso un numero invalido !");
+  }
+
+let nFlag = 0;
+let nPI = 0;
+let cSerie = ``;
+
+  for (let n=1; n<= nNumero*2; n=n+2) {
+      if(nFlag==0){
+          nPI = nPI + (4/n);
+          nFlag=1;
+         cSerie = cSerie + `+(4/${n})`;
+      }else{
+          nPI = nPI - (4/n);
+          nFlag=0;
+          cSerie = cSerie + `-(4/${n})`;            
+      }
+  }
+  alert(cSerie+ `\n\nLa aproximacion del numero PI es: ${nPI}`);
+}
+
+
+//! Ejercicio 40
+$btn40.addEventListener('click', () => {
+  if ($numbeNilakantha.value.length == 0) {
+    return alert('Ingrese numero a validar')
+  }
+
+  let pi = 3;
+  let signo = 1;
+
+  for (let i = 2; i <= 2 * $numbeNilakantha.value; i += 2) {
+    pi += 4 / (i * (i + 1) * (i + 2)) * signo;
+
+    signo += -1
+  }
+  $textPi.innerHTML = pi.toString()
+})
+
+
 
 
 

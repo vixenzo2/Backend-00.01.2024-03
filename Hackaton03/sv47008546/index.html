@@ -88,7 +88,7 @@ if($number.value.length == 3 ) {
   <!--Ejercicio 4-->
   <div class="list">
     <h5>
-      4. Hacer un algoritmo en JavaScript que lea tres números enteros y los muestre de menor a mayor.
+      4. Hacer un algoritmo en JavaScript que lea tres números enteros y los muestre de mayor a menor.
     </h5>
     <div class="divider"></div>
     <div class="container-example">
@@ -1074,19 +1074,33 @@ const numMax = Math.max(...listNumer)
       </h5>
       <div class="divider"></div>
       <div class="container-example">
-        <button onclick="tablitaMultiplicar()">Validar</button>
+        <button onclick="ejercicio37()">Validar</button>
         <h5 id="result33"></h5>
       </div>
       <pre>
           <code>
-          let cTabla  = ``;
-          for (let nTabla = 1; nTabla <= 9; nTabla++) {
-            cTabla = `Tabla del ${nTabla}:\n--------------------\n`;
-            for (nNum = 1; nNum <= 12; nNum++) {
-              cTabla = cTabla + `${nTabla} * ${nNum} = ${nTabla * nNum}\n`;
+            if (isNaN(nNum1) || isNaN(nNum2)) {
+              return alert("¡ Se ingreso un numero invalido !");
             }
-            alert(cTabla);
-          }  
+            
+            if (nNum1 > nNum2) {
+              nNumX = nNum1;
+              nNum1 = nNum2;
+              nNum2 = nNumX;
+            }
+            
+            cMCD= cMCD + `A=${nNum1}\nB=${nNum2}\n\n`
+            let nResiduo = nNum1 % nNum2;
+            
+            while (nResiduo > 0) {
+              nNum = nNum2;
+              nNum2 = nResiduo;
+              nNum1 = nNum;
+              nResiduo = nNum1 % nNum2;
+            }
+            
+            cMCD = cMCD + `El M.C.D es: ${nNum2}`
+            alert(cMCD);
           </code>
         </pre>
     </div>
@@ -1117,6 +1131,31 @@ for (let i = 1; i <= number/2; i++) {
         </code>
       </pre>
   </div>
+
+<!-- ejercicio 39-->
+<div class="list">
+  <h5>
+    39.	Hacer un algoritmo  que cumpla con la aproximación del número pi con la serie de Gregory-Leibniz. La formula que se debe aplicar es:
+    Pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...  </h5>
+  <div class="divider"></div>
+  <div class="container-example">
+    <button onclick="aproximacion()">Validar</button>
+    <h5 id="result39"></h5>
+  </div>
+  <pre>
+      <code>
+      let cTabla  = ``;
+      for (let nTabla = 1; nTabla <= 9; nTabla++) {
+        cTabla = `Tabla del ${nTabla}:\n--------------------\n`;
+        for (nNum = 1; nNum <= 12; nNum++) {
+          cTabla = cTabla + `${nTabla} * ${nNum} = ${nTabla * nNum}\n`;
+        }
+        alert(cTabla);
+      }  
+      </code>
+    </pre>
+</div>
+
 
   <!-- ejercicio 40 -->
 
