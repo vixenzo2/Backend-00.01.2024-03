@@ -177,8 +177,6 @@ function ejercicio2() {
 
 
 
-
-
 /*3.	Hacer un algoritmo que lea un numero y determinar si termina en 4.    */
 function ejercicio3(){
   let Num =Number.parseInt(prompt("Por favor, ingresa un número Valido:"));
@@ -190,8 +188,6 @@ function ejercicio3(){
   }
 
 }
-
-
 
 
 /*4.	Hacer un algoritmo que lea tres numeros enteros y los muestre de menor a mayor.   */
@@ -245,9 +241,6 @@ function ejercicio4(){
 
 
 
-
-
-
 /*5.	Hacer un algoritmo para una tienda de zapatos que tiene una promocion de descuento para vender al mayor,
       esta dependera del numero de zapatos que se compren.
       * Si son mas de diez, se les dara un 10% de descuento sobre el total de la compra;
@@ -255,7 +248,7 @@ function ejercicio4(){
       * si son mas treinta zapatos se otorgara un 40% de descuento.
       El precio de cada zapato es de $80.*/
 
-      function ejercicio5(){
+    function ejercicio5(){
         let Num =Number.parseInt(prompt("Por favor, ingresa un número Valido:"));
         let importe=0,Desc=0,precio=0,Taza=0,Total=0
         
@@ -266,18 +259,33 @@ function ejercicio4(){
           alert("El numero no acaba en 4")
         }
       
-      }
-
-
-
-
-
+    }
 
 
 
 /*6.	Hacer un algoritmo para ayudar a un trabajador a saber cual sera su sueldo semanal,se sabe que
   		si trabaja 40 horas o menos, se le debe pagar $20 por hora, pero
   		si trabaja mas de 40 horas entonces las horas extras se le pagaron a $25 por hora.*/
+
+      function ejercicio6(){
+        let Num_Hora =Number.parseInt(prompt("Por favor, ingresa un número de Horas:"));
+        let imp_Hora=0,Sueldo=0,precio=0,Taza=0,Total=0
+        
+        if (Num_Hora>0 && Num_Hora<=40) {
+          imp_Hora=20;
+        }
+        else if (Num_Hora>40){
+          imp_Hora=25;
+        }
+        else{
+          alert("Por favor,Ingrese un valor valido");
+        }
+        Sueldo=Num_Hora*imp_Hora;
+        alert("Total de Horas: "+ Num_Hora + "\nMonto por Hora: $"+ imp_Hora + "\n Sueldo Semanal: $" + Sueldo);
+      
+    }
+
+
 
 
 
@@ -286,32 +294,122 @@ function ejercicio4(){
  	    solo existen tres tipos de membresia, tipo A, tipo B y tipo C. Los descuentos son los siguientes:
  	    Tipo A 10% de descuento Tipo B 15% de descuento Tipo C 20% de descuento */
 
+       function ejercicio7(){
+          let TypeMemb =prompt("Por favor, ingrese el Tipo de Membresia:");
+          let Desc=0
+          alert("Validando Menbresia")
+        
+          if (TypeMemb == "A" || TypeMemb == "B" || TypeMemb == "C" ) {
+            switch (TypeMemb) {
+              case "A":
+                Desc=10;
+                break;
+
+              case "B":
+                Desc=15;
+                break;
+
+              case "C":
+                Desc=20;
+                break;
+            
+              default:
+                break;
+            }
+            alert("Porcentaje de Descuento: %"+ Desc);
+
+          }
+        
+          else{
+            alert("Por favor,Ingrese un valor valido");
+          }
+       
+    }
 
 
-//8.	Hacer un algoritmo para calcular el promedio de tres notas y determinar si el estudiante aprob� o no.
+
+/*8.	Hacer un algoritmo para calcular el promedio de tres notas y determinar si el estudiante aprob� o no. */
+    function ejercicio8(){
+      let Nota_01 =Number.parseInt(prompt("Por favor, ingresa la 1ra Nota:"));
+      let Nota_02 =Number.parseInt(prompt("Por favor, ingresa la 2da Nota:"));
+      let Nota_03 =Number.parseInt(prompt("Por favor, ingresa la 3ra Nota:"));
+      let Prom_Nota=0
+      Prom_Nota=(Nota_01+Nota_02+Nota_03)/3;
+      
+      if (Prom_Nota>=10) {
+          alert("El estudiante esta aprobado"+"\nPomedio de Notas: "+Prom_Nota)
+      }
+      
+      else{
+        alert("El estudiante esta Reprobado"+"\nPomedio de Notas: "+Prom_Nota)
+      }
+    }
+
+
+
+
+
+
+
+
+
+
 
 /*9.	Hacer un algoritmo para determinar el aumento de un trabajador,
    		se debe tomar en cuenta que
   		si ganaba mas de $2000 tendra un aumento del 5%,
   		si generaba menos de $2000 su aumento sera de un 10%. */
 
+      function ejercicio9(){
+        let Sueldo_Actual =Number.parseInt(prompt("Por favor, ingresa el sueldo actual:"));
+        let Sueldo_Futuro=0;
+      
+        if (Sueldo_Actual>0) {
+            if (Sueldo_Actual<2000) {
+                Sueldo_Futuro=Sueldo_Actual*1.1;
+            }
+            else{
+                Sueldo_Futuro=Sueldo_Actual*1.05;
+            }
+
+            alert("Sueldo Actual"+ Sueldo_Actual + "\nPSueldo Futuro: "+ Sueldo_Futuro)
+          }
+        
+        else{
+            alert("Ingresar un valor valido")
+        }
+      }
+
+
+
+
 
 /*10.	Hacer un algoritmo que diga si un numero es par o impar.  */
+function ejercicio10(){
+  let Num =Number.parseInt(prompt("Por favor, ingresa un número Valido:"));
+  if (((Num+6) % 2) ==0) {
+    alert("El numero es par")
+  }
+  else {
+    alert("El numero es impar")
+  }
+
+}
 
 
 /*11.	Hacer un algoritmo que lea tres numeros y diga cual es el mayor.  */
 
-//12.	Hacer un algoritmo que lea dos numeros y diga cual es el mayor.
+/*12.	Hacer un algoritmo que lea dos numeros y diga cual es el mayor. */
 
-//13.	Hacer un algoritmo que lea una letra y diga si es una vocal
+/*13.	Hacer un algoritmo que lea una letra y diga si es una vocal */
 
-//14.	Hacer un algoritmo que lea un entero positivo del 1 al diez y al 9 y determine si es un n�mero primo.
+/*14.	Hacer un algoritmo que lea un entero positivo del 1 al diez y al 9 y determine si es un numero primo. */
 
-//15.	Hacer un algoritmo que convierta centimetros a pulgadas y libras a kilogramos.
+/*15.	Hacer un algoritmo que convierta centimetros a pulgadas y libras a kilogramos. */
 
-//16.	Hacer un algoritmo que lea un numero y segun ese numero, indique el dia que corresponde.
+/*16.	Hacer un algoritmo que lea un numero y segun ese numero, indique el dia que corresponde.  */
 
-//17.	Hacer un algoritmo donde se ingrese una hora y nos calcule la hora dentro de un segundo.
+/*17.	Hacer un algoritmo donde se ingrese una hora y nos calcule la hora dentro de un segundo.  */
 
 /*18.	Hacer un algoritmo en Pseint para una empresa se encarga de la venta y distribucion de CD virgenes.
       Los clientes pueden adquirir los articulos (supongamos un unico producto de una unica marca) por cantidad. Los precios son:
@@ -350,12 +448,12 @@ function ejercicio4(){
       impares menores o iguales a n  */
 
 
-//24.	Hacer un algoritmo para realizar la suma de todos los números pares hasta el 1000.
+/*24.	Hacer un algoritmo para realizar la suma de todos los números pares hasta el 1000.  */
 
-//25.	Hacer un algoritmo para calcular el factorial de un n�mero de una forma distinta.
+/*25.	Hacer un algoritmo para calcular el factorial de un n�mero de una forma distinta.   */
 
 
-//26.	Hacer un algoritmo para calcular el resto y cociente por medio de restas sucesivas.
+/*26.	Hacer un algoritmo para calcular el resto y cociente por medio de restas sucesivas.   */
 
 /*27. Hacer un algoritmo para determinar la media de una lista indefinida de numeros positivos,
       se debe acabar el programa al ingresar un numero negativo.  */
@@ -366,7 +464,23 @@ function ejercicio4(){
 /*29.	Hacer un algoritmo para calcular la suma de los primeros cien numeros con un ciclo mientras.  */
 
 
-/*30.	Hacer un algoritmo para calcular la suma de los primeros cien números con un ciclo para.   */
+/*30.	Hacer un algoritmo para calcular la suma de los primeros cien números con un ciclo para.  */
+function ejercicio30(){
+  let Num =Number.parseInt(prompt("Por favor, ingresa el numero de Terminos:"));
+  let Sum=0
+  if (Num>0 && Num<=100){
+      for (let i = 1; i <= Num; i++) {
+        Sum=Sum+i;
+      } 
+      alert("La suma de los "+Num+ " primeros numeros es:"+"\n"+Sum);
+  }
+
+  else{
+    alert("Por favor,Ingrese un valor valido");
+  }
+}
+
+
 
 /*31.	Hacer un algoritmo parar calcular la media de los n�meros pares e impares, solo se ingresara diez numeros.   */
 
@@ -429,32 +543,38 @@ function ejercicio36(){
         Diff1=Num1-Num2;
         Q=Num2;
         while (Diff2!=0) {
-          Diff2=Q%Diff1
+          Diff2=Q%Diff1;
           if (Diff2==0){
-            MCD=diff1
-            alert("El MCD  de los numeros ingresados es: " + MCD)
+            MCD=Diff1;
+           alert("El MCD  de los numeros ingresados es: " + MCD);
+           
           }
-
+          else {
           Q=Diff1;
-          Diff2=Diff1;
+          Diff1=Diff2;
+          }   
         }
+
+        
       }
 
       else{
         Diff1=Num2-Num1;
         Q=Num1;
         while (Diff2!=0) {
-          Diff2=Q%Diff1
+          Diff2=Q%Diff1;
           if (Diff2==0){
-            MCD=diff1
-            alert("El MCD  de los numeros ingresados es: " + MCD)
+            MCD=Diff1;
+           alert("El MCD  de los numeros ingresados es: " + MCD);
+           
           }
+          else {
           Q=Diff1;
-          Diff2=Diff1;
+          Diff1=Diff2;
+          }
+          
         }
       }
-
-      
    }
    
    else if (Num1==Num2 && Num1!=0 && Num2!=0) {
@@ -462,9 +582,9 @@ function ejercicio36(){
        alert("El MCD  de los numeros ingresados es: " + MCD)
    }
    else{
-      alert("Ingrese Numeros validos");
+      alert("Por favor,Ingrese Numeros validos");
    }
-}
+ }
   
 
 
