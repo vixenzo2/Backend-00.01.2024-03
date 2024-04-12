@@ -386,8 +386,8 @@ if($number.value.length == 3 ) {
   </pre>
   </div>
 
-   <!--Ejercicio 14-->
-   <div class="list">
+  <!--Ejercicio 14-->
+  <div class="list">
     <h5>
       14. Hacer un algoritmo en JavaScript que lea un entero positivo del 1 al diez y determine si es un número primo.
     </h5>
@@ -401,22 +401,52 @@ if($number.value.length == 3 ) {
     <pre>
     <code>
       if (typeof numeroPrimo != 'number') {
-        return result14.textContent = `El argumento debe ser un numero entero y NO una letra`
-      }
-      if (numeroPrimo <= 1) {
-        return result14.textContent = `El argumento debe ser un numero entero POSITIVO`
-      }
-      var raiz14 = Math.floor(Math.sqrt(numeroPrimo)) + 1;
-      for (var i = 2; i < raiz14; ++i) {
-        if (numeroPrimo % i == 0) {
-    
-          return result14.textContent = `El numero ingresado ${numeroPrimo} No es Primo`;
+        return result14.textContent = `El argumento "${numeroPrimo}" debe ser un numero entero y NO una letra`
         }
-    
+        if (numeroPrimo <= 1) {
+          return result14.textContent = `El argumento "${numeroPrimo}" debe ser un numero entero POSITIVO`
+        }
+        var raiz14 = Math.floor(Math.sqrt(numeroPrimo)) + 1;
+        for (var i = 2; i < raiz14; ++i) {
+          if (numeroPrimo % i == 0) {
+      
+            return result14.textContent = `El numero ingresado ${numeroPrimo} No es Primo`;
+          }
+      
+        }
+        return result14.textContent = `El numero ingresado ${numeroPrimo} es Primo`
       }
-      return result14.textContent = `El numero ingresado ${numeroPrimo} es Primo`
     </code>
   </pre>
+  </div>
+
+  <!--Ejercicio 15-->
+  <div class="list">
+    <h5>
+      15. Hacer un algoritmo que convierta centímetros a pulgadas y libras a kilogramos. </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="convertidorPeso()">Validar</button>
+      <h5 id="result15"></h5>
+
+    </div>
+
+    <pre>
+  <code>
+    var cantPeso = parseInt(prompt('Ingrese la cantidad a convertir'));
+var tipoPeso = prompt('Seleccione el tipo de conversion: "A: para centimetros a pulgadas" o "B: para libras a kilogramos" ');
+var pesoConvertido;
+
+if (tipoPeso == "A" || tipoPeso =="a") {
+  pesoConvertido= cantPeso / 2.54
+  result15.textContent = `Los "${cantPeso}" centimetros equivalen en pulgadas a: "${pesoConvertido}".` 
+} else if (tipoPeso == "B"|| tipoPeso =="b") {
+  pesoConvertido = cantPeso * 0.45359237
+  result15.textContent = `Las "${cantPeso}" libras equivalen en kilogramos a: "${pesoConvertido}".`
+
+}
+  </code>
+</pre>
   </div>
 
   <!-- ejercicio 16 -->
@@ -439,6 +469,193 @@ numberDay = Math.floor(Math.random() * 7) + 1
         </code>
       </pre>
   </div>
+
+  <!-- ejercicio 17  Aqui se utiliza un bucle "while" -->
+
+  <div class="list">
+    <h5>
+      17. Hacer un algoritmo donde se ingrese una hora y nos calcule la hora dentro de un segundo.</h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="mueveReloj()">Validar</button>
+      <h5 id="result17"></h5>
+
+    </div>
+
+    <pre>
+        <code>
+          if (segundo == 60) {
+            segundo = 0;
+            minutos += 1;
+            if (minutos == 60) {
+              minutos = 0;
+              horas += 1;
+              if (horas == 24) {
+                horas = 0;
+              }
+            }}
+        </code>
+      </pre>
+  </div>
+
+
+  <!-- ejercicio 18  -->
+
+  <div class="list">
+    <h5>
+      18. Hacer un algoritmo para una empresa se encarga de la venta y
+      distribución de CD vírgenes. Los clientes pueden adquirir los artículos
+      (supongamos un único producto de una única marca) por cantidad. Los
+      precios son: $10. Si se compran unidades separadas hasta 9. $8. Si se
+      compran entre 10 unidades hasta 99. $7. Entre 100 y 499 unidades. $6.
+      Para mas de 500 unidades. La ganancia para el vendedor es de 8,25 % de
+      la venta. Realizar un algoritmo en Pseint que dado un número de CDs a
+      vender calcule el precio total para el cliente y la ganancia para el
+      vendedor.
+      <div class="divider"></div>
+      <div class="container-example">
+        <button onclick="ventaCds()">Validar</button>
+        <h5 id="result18"></h5>
+        <h5 id="gananciaVendedor"></h5>
+
+
+      </div>
+
+      <pre>
+        <code>
+          if (cantCds <= 9) {
+            totalVenta = cantCds * 10;
+            gananciaVenta = totalVenta * 0.0825
+            result18.textContent = `La cantidad total a pagar por la compra es de "${totalVenta}"`
+          } else if (cantCds >= 10 && cantCds <= 99) {
+            totalVenta = cantCds * 8;
+            gananciaVenta = totalVenta * 0.0825
+            result18.textContent = `La cantidad total a pagar por la compra es de "${totalVenta}"`
+          } if (cantCds >= 100 && cantCds <= 499) {
+            totalVenta = cantCds * 7;
+            gananciaVenta = totalVenta * 0.0825
+            result18.textContent = `La cantidad total a pagar por la compra es de "${totalVenta}"`
+          } else if (cantCds >= 500) {
+            totalVenta = cantCds * 6
+            gananciaVenta = totalVenta * 0.0825
+            result18.textContent = `La cantidad total a pagar por la compra es de "${totalVenta}"`
+          }
+          gananciaVendedor.textContent = `La ganancia obtenida para el vendedor de la venta de ${cantCds} Cds es de ${gananciaVenta}.`
+        
+        </code>
+      </pre>
+  </div>
+
+  <!-- ejercicio 19  -->
+
+  <div class="list">
+    <h5>
+      19. Hacer un algoritmo para una heladería se tienen 4 tipos de empleados
+      ordenados de la siguiente forma con su número identificador y salario
+      diario correspondiente: Cajero (56$/día). Servidor (64$/día). Preparador
+      de mezclas (80$/día). Mantenimiento (48$/día). El dueño de la tienda
+      desea tener un programa donde sólo ingrese dos números enteros que
+      representen al número identificador del empleado y la cantidad de días
+      que trabajó en la semana (6 días máximos). Y el programa le mostrará por
+      pantalla la cantidad de dinero que el dueño le debe pagar al empleado
+      que ingresó
+      <div class="divider"></div>
+      <div class="container-example">
+        <button onclick="heladeria()">Validar</button>
+        <h5 id="result19"></h5>
+
+      </div>
+
+      <pre>
+        <code>
+          if (diasTrabajados > 6 && diasTrabajados < 1) {
+            result19.textContent = `La cantidad de dias ingresado excede el limite permitido, ingrese un valor de [1-6]`
+          } else switch (codVendedor) {
+              case 1:
+                sueldoSemanal = 56 * diasTrabajados;
+                result19.textContent = `El sueldo que debera pagar al Cajero es de ${sueldoSemanal} por haber trabajado ${diasTrabajados} dias.`
+              case 2:
+                sueldoSemanal = 64 * diasTrabajados;
+                result19.textContent = `El sueldo que debera pagar al Servidor es de ${sueldoSemanal} por haber trabajado ${diasTrabajados} dias.`
+              case 3:
+                sueldoSemanal = 80 * diasTrabajados;
+                result19.textContent = `El sueldo que debera pagar al Preparador es de ${sueldoSemanal} por haber trabajado ${diasTrabajados} dias.`
+              case 4:
+                sueldoSemanal = 48 * diasTrabajados;
+                result19.textContent = `El sueldo que debera pagar al de Mantenimiento es de ${sueldoSemanal} por haber trabajado ${diasTrabajados} dias.`
+            }
+        </code>
+      </pre>
+  </div>
+
+  <!-- ejercicio 20 -->
+
+  <div class="list">
+    <h5>
+      20. Hacer un algoritmo que que lea 4 números enteros positivos y
+      verifique y realice las siguientes operaciones:
+      //¿Cuántos números son Pares?
+      //¿Cuál es el mayor de todos?
+      //Si el tercero es par, calcular el cuadrado del segundo.
+      //Si el primero es menor que el cuarto, calcular la media de los 4 números.
+      Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si
+      cumple se
+      cumple la segunda condición, calcular la suma de los 4 números.</p>
+      <div class="divider"></div>
+      <div class="container-example">
+        <button onclick="combinada()">Validar</button>
+        <h5 id="resultPar"></h5>
+        <h5 id="resultMay"></h5>
+        <h5 id="numbers20"></h5>
+        <h5 id="cuadrado20"></h5>
+        <h5 id="media20"></h5>
+        <h5 id="suma20"></h5>
+
+      </div>
+
+      <pre>
+        <code>
+          if (numero1 % 2 == 0) {nroPares += 1}
+  else {nroPares += 0} 
+  if (numero2 % 2 == 0) {nroPares += 1}
+  else {nroPares += 0} 
+  if (numero3 % 2 == 0) {nroPares += 1}
+  else {nroPares += 0} 
+  if (numero4 % 2 == 0) {nroPares += 1}
+  else {nroPares += 0} 
+resultPar.textContent=`La cantidad de numeros pares ingresados es "${nroPares}".`
+
+if (numero1 >= numero2 && numero1 >= numero3 && numero1>=numero4) {
+  resultMay.textContent = `El numero mayor de los cuatro numeros es: ${numero1}`
+} else if (numero2 >= numero1 && numero2 >= numero3 && numero2>=numero4) {
+  resultMay.textContent = `El numero mayor de los cuatro numeros es: ${numero2}`
+} if (numero3 >= numero1 && numero3 >= numero2 && numero3>=numero4) {
+  resultMay.textContent = `El numero mayor de los cuatro numeros es: ${numero3}`
+}else if (numero4>= numero1 && numero4>= numero2 && numero4>= numero3){
+  resultMay.textContent = `El numero mayor de los cuatro numeros es: ${numero4}`
+}
+numbers20.textContent = `los números introducidos son ${numero1}, ${numero2}, ${numero3}. ${numero4}`
+
+if (numero3 % 2 == 0){
+  cuadradosegundo = numero2*numero2
+  cuadrado20.textContent = `El tercer numero ingresado ${numero3} es par, y el cuadrado del segundo es ${cuadradosegundo}`
+}
+
+if (numero1<numero4){
+  media = (numero1+numero2+numero3+numero4)/4
+  media20.textContent = `El primer ${numero1} numero es menor que el cuarto ${numero4} y la media de los cuatro numeros es ${media}`
+}
+if (numero2>numero3 && numero3>=50 && numero3<=700){
+  sumatoria=numero1+numero2+numero3+numero4
+  suma20.textContent=`La suma de los 4 numeros es ${sumatoria}`
+}else{
+  suma20.textContent=`No cumple con las 2 condiciones`
+}       
+</code>
+      </pre>
+  </div>
+
+
 
   <!-- ejercicio 21 -->
 
@@ -463,6 +680,46 @@ for(let i = 1; i <= number; i++) {
         </code>
       </pre>
   </div>
+  <!-- ejercicio 22 -->
+  <div class="list">
+    <h5>
+      22. Hacer un algoritmo para calcular la suma de los n primeros números.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="sumaN()">Validar</button>
+      <h5 id="result22"></h5>
+    </div>
+    <pre>
+      <code>
+        sumaN1 = (n * (n + 1)) / 2
+      </code>
+    </pre>
+  </div>
+
+  <!-- ejercicio 23 -->
+  <div class="list">
+    <h5>
+      23. Hacer un algoritmo para calcular la suma de los números impares
+      menores o iguales a n.</h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="sumaImpares()">Validar</button>
+      <h5 id="result23"></h5>
+    </div>
+    <pre>
+      <code>
+        if (n23>=1){
+          for (var i=1; i<=n23; i++){
+            if(i % 2 == 1){
+              sumaN23 = sumaN23 + i
+              result23.textContent=`La suma de los primeros numeros de n (impares) es de: ${sumaN23}`
+            }
+          }
+        }
+      </code>
+    </pre>
+  </div>
 
   <!-- ejercicio 24 -->
 
@@ -481,11 +738,272 @@ for(let i = 1; i <= number; i++) {
 
     <pre>
         <code>
-for(let i = 1; i <= number; i++) {
-  if(i % 2 === 0) {
-    result += i
-  }
-}
+          for(let i = 1; i <= number; i++) {
+            if(i % 2 === 0) {
+              result += i
+            }
+          }
+        </code>
+      </pre>
+  </div>
+
+  <!-- ejercicio 25 -->
+  <div class="list">
+    <h5>
+      25. Hacer un algoritmo para calcular el factorial de un número de una
+      forma distinta.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="factorial25()">Validar</button>
+      <h5 id="result25"></h5>
+    </div>
+    <pre>
+    <code>
+      if (isNaN(nNum25)) {
+        return alert("¡ Se ingreso un numero invalido !");
+      }
+    
+      let nFact = 1;
+      let nCont = 0;
+    
+      do {
+        nCont = nCont + 1;
+        nFact = nFact * nCont;
+      } while (nCont < nNum25);
+    
+     result25.textContent=`El factorial de ${nNum25} es: ${nFact}`;
+    </code>
+  </pre>
+  </div>
+
+
+  <!-- ejercicio 26 -->
+  <div class="list">
+    <h5>
+      26. Hacer un algoritmo para calcular el resto y cociente por medio de
+      restas sucesivas.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="cDivisor()">Validar</button>
+      <h5 id="result26"></h5>
+    </div>
+    <pre>
+    <code>
+      if (isNaN(dividendo) || isNaN(divisor)) {
+        return result26.textContent = `Por favor ingresar solo numeros`
+      } else {
+    
+        var residuo = dividendo;
+        var cociente = 0;
+    
+        while (residuo >= divisor) {
+          residuo = residuo - divisor,
+            cociente = cociente + 1
+        }
+        result26.textContent = `el cociente es: ${cociente} y el residuo es ${residuo}`
+      }
+    </code>
+  </pre>
+  </div>
+
+  <!-- ejercicio 27 -->
+  <div class="list">
+    <h5>
+      27. Hacer un algoritmo para determinar la media de una lista indefinida
+      de números positivos, se debe acabar el programa al ingresar un número
+      negativo.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="mediaPositivo()">Validar</button>
+      <h5 id="result27"></h5>
+    </div>
+    <pre>
+  <code>
+    do {
+      suma27 = suma27 + numero27
+      contador27 = contador27 + 1
+      numero27 = parseInt(prompt('Ingrese numero, ingrese negativo para finalizar'));
+  
+      if (isNaN(numero27)) {
+        alert("¡ Se ingreso un numero invalido !");
+        numero27 = 0;
+        contador27 = contador27 - 1;
+      }
+    }
+    while (numero27 >= 0) {
+      let media27 = suma27 / contador27;
+      result27.textContent = `La media de los numeros positivos ingresados es:  ${media27}`
+    }
+  </code>
+</pre>
+  </div>
+
+  <!-- ejercicio 28 -->
+  <div class="list">
+    <h5>
+      28. Hacer un algoritmo para calcular la suma de los primeros cien
+      números con un ciclo repetir.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="repetir100()">Validar</button>
+      <h5 id="result28"></h5>
+    </div>
+    <pre>
+  <code>
+    for (i = 1; i < 101; i++) {
+      suma100 = suma100 + i;
+    }
+    result28.textContent = `La suma de los 100 primeros numeros es: ${suma100}`
+  </code>
+</pre>
+  </div>
+
+  <!-- ejercicio 29 -->
+  <div class="list">
+    <h5>
+      29. Hacer un algoritmo para calcular la suma de los primeros cien números con un ciclo mientras.
+
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="repMientras()">Validar</button>
+      <h5 id="result29"></h5>
+    </div>
+    <pre>
+  <code>
+    do {
+      contador100 = contador100 + 1;
+      suma29 = suma29 + contador100;
+    }
+    while (contador100 < 100)
+    result29.textContent = `La suma de los 100 primeros numeros es: ${suma29}`
+  </code>
+</pre>
+  </div>
+
+  <!-- ejercicio 30-->
+  <div class="list">
+    <h5>
+      30. Hacer un algoritmo para calcular la suma de los primeros cien números con un ciclo para.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="repetirPara()">Validar</button>
+      <h5 id="result30"></h5>
+    </div>
+    <pre>
+    <code>
+      for (i = 1; i < 101; i++) {
+        sum100 = sum100 + i;
+      }
+      result30.textContent = `La suma de los 100 primeros numeros es: ${sum100}`    
+    </code>
+  </pre>
+  </div>
+
+  <!-- ejercicio 31-->
+  <div class="list">
+    <h5>
+      31. Hacer un algoritmo parar calcular la media de los números pares e impares, sólo se ingresará diez números.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="mediaParImpar()">Validar</button>
+      <h5 id="result31"></h5>
+    </div>
+    <pre>
+  <code>
+    do {
+      contNum = contNum + 1;
+      sumNum = sumNum + numMedia;
+      numMedia = Number.parseInt(prompt(`Ingrese los numeros a promediar ${contNum}/10`));
+  
+      if (isNaN(numMedia)) {
+        return alert("¡ Se ingreso un numero invalido !");
+      }
+  
+      if (numMedia % 2 == 0) {
+        contPar = contPar + 1;
+        sumPar = sumPar + numMedia;
+      } else{
+        contImpar31 = contImpar31 + 1;
+      sumImpar = sumImpar + numMedia;
+    }}
+    while (contNum < 10);
+    var promedImpar = sumImpar / contImpar31;
+    var promedPar = sumPar / contPar;
+    result31.textContent = `El promedio de nros Pares es: ${promedPar} y el promedio de nros Impares es: ${promedImpar}` 
+  </code>
+</pre>
+  </div>
+
+  <!-- ejercicio 32-->
+  <div class="list">
+    <h5>
+      32. Se quiere saber cuál es la ciudad con la población de más personas, son tres provincias y once ciudades,
+      hacer un algoritmo que nos permita saber eso. (NO HAY DATOS SUFICIENTES)
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="poblacion()">Validar</button>
+      <h5 id="result32"></h5>
+    </div>
+    <pre>
+    <code>
+      for (i = 1; i < 101; i++) {
+        sum100 = sum100 + i;
+      }
+      result30.textContent = `La suma de los 100 primeros numeros es: ${sum100}`    
+    </code>
+  </pre>
+  </div>
+
+  <!-- ejercicio 33-->
+  <div class="list">
+    <h5>
+      33. Hacer un algoritmo que permita al usuario continuar con el programa.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="programUsuario()">Validar</button>
+      <h5 id="result33"></h5>
+    </div>
+    <pre>
+      <code>
+        do {
+          nCont33 = nCont33 + 1;
+          alert(`Proceso: ${nCont33}`);
+          cOpc = prompt(`Continuar con el programa Si[S] o No [N]`).toUpperCase();
+        } while (cOpc != "N");
+        alert(`Programa terminado!`);   
+      </code>
+    </pre>
+  </div>
+
+  <!-- ejercicio 34-->
+  <div class="list">
+    <h5>
+      34. Hacer un algoritmo que imprima la tabla de multiplicar de los números del uno nueve.
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="tablitaMultiplicar()">Validar</button>
+      <h5 id="result33"></h5>
+    </div>
+    <pre>
+        <code>
+        let cTabla  = ``;
+        for (let nTabla = 1; nTabla <= 9; nTabla++) {
+          cTabla = `Tabla del ${nTabla}:\n--------------------\n`;
+          for (nNum = 1; nNum <= 12; nNum++) {
+            cTabla = cTabla + `${nTabla} * ${nNum} = ${nTabla * nNum}\n`;
+          }
+          alert(cTabla);
+        }  
         </code>
       </pre>
   </div>
@@ -515,6 +1033,64 @@ const numMax = Math.max(...listNumer)
     </pre>
   </div>
 
+  <!-- ejercicio 36-->
+  <div class="list">
+    <h5>
+      36.	Hacer un algoritmo  para calcular la serie de Fibonacc.        
+    </h5>
+    <div class="divider"></div>
+    <div class="container-example">
+      <button onclick="fibonacci36()">Validar</button>
+      <h5 id="result36b"></h5>
+      <h5 id="result36"></h5>
+    </div>
+    <pre>
+        <code>
+          let nNumero = Number.parseInt(prompt(`Ingrese un numero:`));
+          if (isNaN(nNumero)) {
+            return alert("¡ Se ingreso un numero invalido !");
+          }
+        result36b.textContent=`Los primeros ${nNumero}, terminos de la serie fibonacci son:`
+          let nSuma = 0;
+          let nNum1 = 0;
+          let nNum2 = 1;
+          let cSerie= "";
+        
+          for (n = 1; n <= nNumero; n++) {
+            cSerie = cSerie + nNum2 + " ";
+            nSuma = nNum1 + nNum2;
+            nNum1 = nNum2;
+            nNum2 = nSuma;
+          }
+        result36.textContent =`${cSerie}`
+        </code>
+      </pre>
+  </div>
+
+    <!-- ejercicio 37-->
+    <div class="list">
+      <h5>
+        37.	Hacer un algoritmo  para conseguir el M.C.D de un número por medio del algoritmo de Euclides.          
+      </h5>
+      <div class="divider"></div>
+      <div class="container-example">
+        <button onclick="tablitaMultiplicar()">Validar</button>
+        <h5 id="result33"></h5>
+      </div>
+      <pre>
+          <code>
+          let cTabla  = ``;
+          for (let nTabla = 1; nTabla <= 9; nTabla++) {
+            cTabla = `Tabla del ${nTabla}:\n--------------------\n`;
+            for (nNum = 1; nNum <= 12; nNum++) {
+              cTabla = cTabla + `${nTabla} * ${nNum} = ${nTabla * nNum}\n`;
+            }
+            alert(cTabla);
+          }  
+          </code>
+        </pre>
+    </div>
+  
   <!-- ejercicio 38 -->
 
   <div class="list">
@@ -560,14 +1136,14 @@ for (let i = 1; i <= number/2; i++) {
 
     <pre>
       <code>
-let pi = 3;
-let signo = 1;
-let num = $numbeNilakantha.value;
+      let pi = 3;
+      let signo = 1;
+      let num = $numbeNilakantha.value;
 
-for(let i = 2; i<= 2 * num; i+=2) {
-  pi += 4/(i*(i+1) * (i+2)) * signo;
-  signo += -1
-}
+      for(let i = 2; i<= 2 * num; i+=2) {
+        pi += 4/(i*(i+1) * (i+2)) * signo;
+        signo += -1
+      }
       </code>
     </pre>
   </div>

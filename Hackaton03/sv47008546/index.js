@@ -35,14 +35,67 @@ const result13 = document.getElementById("result13")
 
 const result14 = document.getElementById("result14")
 
+const result15 = document.getElementById("result15")
+
+const $btn16 = document.getElementById('btn-read-number-16')
+const $nameDay = document.getElementById('name-day')
+const $numbeNilakantha = document.getElementById('number-nilakantha')
+
+const result17 = document.getElementById("result17")
+
+
+const result18 = document.getElementById("result18")
+const gananciaVendedor = document.getElementById("gananciaVendedor")
+
+const result19 = document.getElementById("result19")
+
+const resultPar = document.getElementById("resultPar")
+const result20 = document.getElementById("result20")
+const resultMay = document.getElementById("resultMay")
+const numbers20 = document.getElementById("numbers20")
+const cuadrado20 = document.getElementById("cuadrado20")
+const media20 = document.getElementById("media20")
+const suma20 = document.getElementById("suma20")
+
+const $btn21 = document.getElementById('btn-read-number-21')
+const $numberFactorial = document.getElementById('number-factorial')
+const $textFactorial = document.getElementById('text-factorial')
+
+const result22 = document.getElementById("result22")
+
+const result23 = document.getElementById("result23")
+
+const $btn24 = document.getElementById('btn-read-number-24')
+const $numberPar = document.getElementById('number-par')
+const $textPar = document.getElementById('text-par')
+
+const result25 = document.getElementById("result25")
+
+const result26 = document.getElementById("result26")
+
+const result27 = document.getElementById("result27")
+
+const result28 = document.getElementById("result28")
+
+const result29 = document.getElementById("result29")
+
+
+const result30 = document.getElementById("result30")
+
+const result31 = document.getElementById("result31")
+
+const result33 = document.getElementById("result33")
+
+const result34 = document.getElementById("result34")
+
 const $btn35 = document.getElementById('btn-read-number-35')
 const $textOpacity = document.getElementById('list-numbers-opacity');
 const $opacity = document.getElementById('opacity-list')
 const $maxNumber = document.getElementById('num-max')
 
-const $btn16 = document.getElementById('btn-read-number-16')
-const $nameDay = document.getElementById('name-day')
-const $numbeNilakantha = document.getElementById('number-nilakantha')
+const result36 = document.getElementById("result36")
+const result36b = document.getElementById("result36b")
+
 
 const $btn40 = document.getElementById('btn-read-number-40')
 const $textPi = document.getElementById('text-pi');
@@ -51,13 +104,9 @@ const $btn38 = document.getElementById('btn-read-number-38')
 const $numberPerfect = document.getElementById('number-perfect')
 const $textPerfect = document.getElementById('num-perfect')
 
-const $btn21 = document.getElementById('btn-read-number-21')
-const $numberFactorial = document.getElementById('number-factorial')
-const $textFactorial = document.getElementById('text-factorial')
 
-const $btn24 = document.getElementById('btn-read-number-24')
-const $numberPar = document.getElementById('number-par')
-const $textPar = document.getElementById('text-par')
+
+
 
 //! Ejercicio 01
 $btn.addEventListener('click', () => {
@@ -275,10 +324,10 @@ function esPrimo(numeroPrimo) {
   var numeroPrimo = parseInt(prompt('Ingrese un numero'))
 
   if (typeof numeroPrimo != 'number') {
-    return result14.textContent = `El argumento debe ser un numero entero y NO una letra`
+    return result14.textContent = `El argumento "${numeroPrimo}" debe ser un numero entero y NO una letra`
   }
   if (numeroPrimo <= 1) {
-    return result14.textContent = `El argumento debe ser un numero entero POSITIVO`
+    return result14.textContent = `El argumento "${numeroPrimo}" debe ser un numero entero POSITIVO`
   }
   var raiz14 = Math.floor(Math.sqrt(numeroPrimo)) + 1;
   for (var i = 2; i < raiz14; ++i) {
@@ -292,13 +341,27 @@ function esPrimo(numeroPrimo) {
 }
 
 //try {
-//console.log(esPrimo(9));
+//console.log(esPrimo(6));
 //} catch (e) {
-// console.log(`Error: ${e.message}`)
+//console.log(`Error: ${e.message}`)
 //}
 
+//! Ejercicio 15
+function convertidorPeso(cantPeso, pesoConvertido, tipoPeso) {
 
+  var cantPeso = parseInt(prompt('Ingrese la cantidad a convertir'));
+  var tipoPeso = prompt('Seleccione el tipo de conversion: "A: para centimetros a pulgadas" o "B: para libras a kilogramos" ');
+  var pesoConvertido;
 
+  if (tipoPeso == "A" || tipoPeso == "a") {
+    pesoConvertido = cantPeso / 2.54
+    result15.textContent = `Los "${cantPeso}" centimetros equivalen en pulgadas a: "${pesoConvertido}".`
+  } else if (tipoPeso == "B" || tipoPeso == "b") {
+    pesoConvertido = cantPeso * 0.45359237
+    result15.textContent = `Las "${cantPeso}" libras equivalen en kilogramos a: "${pesoConvertido}".`
+
+  }
+}
 
 //! Ejercicio 16
 
@@ -336,7 +399,397 @@ function handlerDay() {
   }
 }
 
+//! Ejercicio 17
+function mueveReloj(segundo, horas, minutos, contador) {
+
+  var horas = parseInt(prompt('Ingrese la hora de su preferencia sin saltar [0-23]'))
+  var minutos = parseInt(prompt('Ingrese el minuto de su preferencia sin saltar [0-59]'))
+  var segundo = parseInt(prompt('Ingrese el segundo de su preferencia sin saltar [0-59]')) + 1;
+  //var contadorseg;
+  // var contadormin;
+  //var contadorhr;
+
+  //if (horas == 60 || minutos == 60 || segundo == 60) {
+  //   alert('los numeros ingresados no son correctos, corregir')
+  //}
+  if (segundo == 60) {
+    segundo = 0;
+    minutos += 1;
+    if (minutos == 60) {
+      minutos = 0;
+      horas += 1;
+      if (horas == 24) {
+        horas = 0;
+      }
+    }
+    //while (segundo <= 59) {
+    //contadorseg = segundo + 1;
+    // setTimeout(1000)
+    //} while (minutos <= 59) {
+    //segundo == 0;
+    //contadormin = minutos + 1;
+    //setTimeout(1000)
+    //} while (horas <= 23) {
+    // minutos == 0;
+    //contadorhr = horas + 1;
+    //setTimeout(1000)
+    //} if (horas == 24) {
+    // horas == 0;
+  }
+  result17.textContent = `la hora actual ingresada es: ${horas}:${minutos}:${segundo}`
+  //try {
+  //console.log(mueveReloj());
+  //} catch (e) {
+  //console.log(`Error: ${e.message}`)
+  //}
+}
+
+//if (horas > 9) {
+//result17.textContent = `La hora digitada es:"${horas}"`
+//} else {
+//result17.textContent = `La hora digitada es:"0${horas}"`
+//}
+//if (minutos > 9) {
+// result17.textContent = `El minuto digitado es:"${minutos}"`
+//} else {
+// result17.textContent = `El minuto digitado es: "0${minutos}"`
+//}
+// if (segundo > 9) {
+// result17.textContent = `El segundo digitado es:"${segundo}"`
+//} else {
+//  result17.textContent = `El segundo digitado es:"0${segundo}"`
+
+//! Ejercicio 18
+function ventaCds(cantCds) {
+
+  var cantCds = parseInt(prompt('Ingrese la cantidad de Cds A comprar'))
+  var gananciaVenta;
+
+  if (cantCds <= 9) {
+    totalVenta = cantCds * 10;
+    gananciaVenta = totalVenta * 0.0825
+    result18.textContent = `La cantidad total a pagar por la compra es de "${totalVenta}"`
+  } else if (cantCds >= 10 && cantCds <= 99) {
+    totalVenta = cantCds * 8;
+    gananciaVenta = totalVenta * 0.0825
+    result18.textContent = `La cantidad total a pagar por la compra es de "${totalVenta}"`
+  } if (cantCds >= 100 && cantCds <= 499) {
+    totalVenta = cantCds * 7;
+    gananciaVenta = totalVenta * 0.0825
+    result18.textContent = `La cantidad total a pagar por la compra es de "${totalVenta}"`
+  } else if (cantCds >= 500) {
+    totalVenta = cantCds * 6
+    gananciaVenta = totalVenta * 0.0825
+    result18.textContent = `La cantidad total a pagar por la compra es de "${totalVenta}"`
+  }
+  gananciaVendedor.textContent = `La ganancia obtenida para el vendedor de la venta de ${cantCds} Cds es de ${gananciaVenta}.`
+
+}
+
+
+//! Ejercicio 19
+//Cajero (56$/día). Servidor (64$/día). Preparador
+//    de mezclas (80$/día). Mantenimiento (48$/día)
+function heladeria(codVendedor, diasTrabajados, sueldoSemanal) {
+
+  var codVendedor = parseInt(prompt('Ingrese el Codigo del vendedor "1: Cajero", "2:Servidor", "3:Preparador", "4:Mantenimiento" [Escoger solo de 1-4]'))
+  var diasTrabajados = parseInt(prompt('Ingrese la cantidad de días trabajados: Maximo 6 dias'))
+  var sueldoSemanal;
+
+  if (diasTrabajados > 6 && diasTrabajados < 1) {
+    result19.textContent = `La cantidad de dias ingresado excede el limite permitido, ingrese un valor de [1-6]`
+  } else switch (codVendedor) {
+    case 1:
+      sueldoSemanal = 56 * diasTrabajados;
+      result19.textContent = `El sueldo que debera pagar al Cajero es de ${sueldoSemanal} por haber trabajado ${diasTrabajados} dias.`
+    case 2:
+      sueldoSemanal = 64 * diasTrabajados;
+      result19.textContent = `El sueldo que debera pagar al Servidor es de ${sueldoSemanal} por haber trabajado ${diasTrabajados} dias.`
+    case 3:
+      sueldoSemanal = 80 * diasTrabajados;
+      result19.textContent = `El sueldo que debera pagar al Preparador es de ${sueldoSemanal} por haber trabajado ${diasTrabajados} dias.`
+    case 4:
+      sueldoSemanal = 48 * diasTrabajados;
+      result19.textContent = `El sueldo que debera pagar al de Mantenimiento es de ${sueldoSemanal} por haber trabajado ${diasTrabajados} dias.`
+  }
+
+}
+
+//! Ejercicio 20
+function combinada(numero1, numero2, numero3, numero4) {
+  var numero1 = parseInt(prompt('Ingrese el primer numero'))
+  var numero2 = parseInt(prompt('Ingrese el segundo numero'))
+  var numero3 = parseInt(prompt('Ingrese el tercer numero'))
+  var numero4 = parseInt(prompt('Ingrese el cuarto numero'))
+  var nroPares = 0;
+  var cuadradosegundo;
+  var media;
+  var sumatoria;
+
+  if (numero1 % 2 == 0) { nroPares += 1 }
+  else { nroPares += 0 }
+  if (numero2 % 2 == 0) { nroPares += 1 }
+  else { nroPares += 0 }
+  if (numero3 % 2 == 0) { nroPares += 1 }
+  else { nroPares += 0 }
+  if (numero4 % 2 == 0) { nroPares += 1 }
+  else { nroPares += 0 }
+  resultPar.textContent = `La cantidad de numeros pares ingresados es "${nroPares}".`
+
+  if (numero1 >= numero2 && numero1 >= numero3 && numero1 >= numero4) {
+    resultMay.textContent = `El numero mayor de los cuatro numeros es: ${numero1}`
+  } else if (numero2 >= numero1 && numero2 >= numero3 && numero2 >= numero4) {
+    resultMay.textContent = `El numero mayor de los cuatro numeros es: ${numero2}`
+  } if (numero3 >= numero1 && numero3 >= numero2 && numero3 >= numero4) {
+    resultMay.textContent = `El numero mayor de los cuatro numeros es: ${numero3}`
+  } else if (numero4 >= numero1 && numero4 >= numero2 && numero4 >= numero3) {
+    resultMay.textContent = `El numero mayor de los cuatro numeros es: ${numero4}`
+  }
+  numbers20.textContent = `los números introducidos son ${numero1}, ${numero2}, ${numero3}. ${numero4}`
+
+  if (numero3 % 2 == 0) {
+    cuadradosegundo = numero2 * numero2
+    cuadrado20.textContent = `El tercer numero ingresado ${numero3} es par, y el cuadrado del segundo es ${cuadradosegundo}`
+  }
+
+  if (numero1 < numero4) {
+    media = (numero1 + numero2 + numero3 + numero4) / 4
+    media20.textContent = `El primer ${numero1} numero es menor que el cuarto ${numero4} y la media de los cuatro numeros es ${media}`
+  }
+
+  if (numero2 > numero3 && numero3 >= 50 && numero3 <= 700) {
+    sumatoria = numero1 + numero2 + numero3 + numero4
+    suma20.textContent = `La suma de los 4 numeros es ${sumatoria}`
+  } else {
+    suma20.textContent = `No cumple con las 2 condiciones`
+  }
+
+}
+
+//! Ejercicio 21
+$btn21.addEventListener('click', () => {
+  const number = parseInt($numberFactorial.value);
+  let result = 1;
+  if ($numberFactorial.value.length == 0) {
+    return alert('Ingrese numero a validar')
+  }
+
+  for (let i = 1; i <= number; i++) {
+    result = result * i
+  }
+
+  $textFactorial.innerHTML = `El factorial de ${number}! es ${result}`
+})
+
+//! Ejercicio 22
+function sumaN(n, sumaN1) {
+  var n = parseInt(prompt('Ingrese un numero entero positivo'))
+  var sumaN1 = (n * (n + 1)) / 2
+
+  result22.textContent = `La suma de los primeros numeros es de: ${sumaN1}`
+}
+
+//! Ejercicio 23
+function sumaImpares(n23, sumaN23) {
+
+  var n23 = parseInt(prompt('Ingrese un valor para "n"'))
+  var sumaN23 = 0;
+
+  if (n23 >= 1) {
+    for (var i = 1; i <= n23; i++) {
+      if (i % 2 == 1) {
+        sumaN23 = sumaN23 + i
+        result23.textContent = `La suma de los primeros numeros de n (impares) es de: ${sumaN23}`
+      }
+    }
+  }
+}
+
+//! Ejercicio 24
+$btn24.addEventListener('click', () => {
+  const number = parseInt($numberPar.value);
+  let result = 0;
+
+  if ($numberPar.value.length == 0) {
+    return alert('Ingrese numero a validar')
+  }
+
+  for (let i = 1; i <= number; i++) {
+    if (i % 2 == 0) {
+      result += i
+    }
+  }
+
+  $textPar.innerHTML = `El suma de pares es de: ${result}`
+})
+
+//! Ejercicio 25
+function factorial25() {
+  // 25.	Hacer un algoritmo para calcular el factorial de un numero de una forma distinta.
+
+  let nNum25 = Number.parseInt(prompt("Ingresar un numero:"));
+
+  if (isNaN(nNum25)) {
+    return alert("¡ Se ingreso un numero invalido !");
+  }
+
+  let nFact = 1;
+  let nCont = 0;
+
+  do {
+    nCont = nCont + 1;
+    nFact = nFact * nCont;
+  } while (nCont < nNum25);
+
+  result25.textContent = `El factorial de ${nNum25} es: ${nFact}`;
+}
+
+//! Ejercicio 26 (Cuando se trate solo de numeros la funcion asegurate de poner PARSEINT)
+
+function cDivisor(dividendo, divisor) {
+
+  var dividendo = parseInt(prompt('Ingrese el numero dividendo'));
+  var divisor = parseInt(prompt('Ingrese el numero divisor'));
+
+  if (isNaN(dividendo) || isNaN(divisor)) {
+    return result26.textContent = `Por favor ingresar solo numeros`
+  } else {
+
+    var residuo = dividendo;
+    var cociente = 0;
+
+    while (residuo >= divisor) {
+      residuo = residuo - divisor,
+        cociente = cociente + 1
+    }
+    result26.textContent = `el cociente es: ${cociente} y el residuo es ${residuo}`
+
+  }
+}
+
+//! Ejercicio 27 (EL bucle empieza con do y termina con while (no inversa porque saldra error en el cierre)
+function mediaPositivo(suma27, contador27, numero27, media27) {
+  var suma27 = 0;
+  var contador27 = -1;
+  var numero27 = 0;
+
+  do {
+    suma27 = suma27 + numero27
+    contador27 = contador27 + 1
+    numero27 = parseInt(prompt('Ingrese numero, ingrese negativo para finalizar'));
+
+    if (isNaN(numero27)) {
+      alert("¡ Se ingreso un numero invalido !");
+      numero27 = 0;
+      contador27 = contador27 - 1;
+    }
+  }
+  while (numero27 >= 0) {
+    let media27 = suma27 / contador27;
+    result27.textContent = `La media de los numeros positivos ingresados es:  ${media27}`
+  }
+}
+
+//! Ejercicio 28 
+function repetir100() {
+  var suma100 = 0;
+
+  for (i = 1; i < 101; i++) {
+    suma100 = suma100 + i;
+  }
+  result28.textContent = `La suma de los 100 primeros numeros es: ${suma100}`
+
+}
+
+//! Ejercicio 29
+function repMientras(suma29, contador100) {
+
+  var suma29 = 0;
+  var contador100 = 0;
+
+  do {
+    contador100 = contador100 + 1;
+    suma29 = suma29 + contador100;
+  }
+  while (contador100 < 100)
+  result29.textContent = `La suma de los 100 primeros numeros es: ${suma29}`
+}
+
+//! Ejercicio 30
+function repetirPara() {
+  var sum100 = 0;
+
+  for (i = 1; i < 101; i++) {
+    sum100 = sum100 + i;
+  }
+  result30.textContent = `La suma de los 100 primeros numeros es: ${sum100}`
+
+}
+
+//! Ejercicio 31 (Es importante que todos los if y else abran y cierren llaves porque sino combinara secuencias)
+// 31.	Hacer un algoritmo parar calcular la media de los n�meros pares e impares, s�lo se ingresar� diez n�meros.
+
+function mediaParImpar(contPar, contImpar31, sumPar, sumImpar, promedImpar, promedPar, numMedia, contNum, sumNum) {
+  var contPar = 0;
+  var sumPar = 0;
+  var numMedia = 0;
+  var contImpar31 = 0;
+  var sumImpar = 0;
+  var contNum = 0;
+  var sumNum = 0;
+
+  do {
+    contNum = contNum + 1;
+    sumNum = sumNum + numMedia;
+    numMedia = Number.parseInt(prompt(`Ingrese los numeros a promediar ${contNum}/10`));
+
+    if (isNaN(numMedia)) {
+      return alert("¡ Se ingreso un numero invalido !");
+    }
+
+    if (numMedia % 2 == 0) {
+      contPar = contPar + 1;
+      sumPar = sumPar + numMedia;
+    } else {
+      contImpar31 = contImpar31 + 1;
+      sumImpar = sumImpar + numMedia;
+    }
+  }
+  while (contNum < 10);
+  var promedImpar = sumImpar / contImpar31;
+  var promedPar = sumPar / contPar;
+  result31.textContent = `El promedio de nros Pares es: ${promedPar} y el promedio de nros Impares es: ${promedImpar}`
+}
+
+
+//! Ejercicio 33 (The toUpperCase() method converts a string(cadena) to uppercase letters)
+function programUsuario() {
+  let nCont33 = 0;
+  let cOpc = "";
+
+  do {
+    nCont33 = nCont33 + 1;
+    alert(`Proceso: ${nCont33}`);
+    cOpc = prompt(`Continuar con el programa Si[S] o No [N]`).toUpperCase();
+  } while (cOpc != "N");
+  alert(`Programa terminado!`);
+}
+
+//! Ejercicio 34
+function tablitaMultiplicar() {
+
+  let cTabla = ``;
+  for (let nTabla = 1; nTabla <= 9; nTabla++) {
+    cTabla = `Tabla del ${nTabla}:\n--------------------\n`;
+    for (nNum = 1; nNum <= 12; nNum++) {
+      cTabla = cTabla + `${nTabla} * ${nNum} = ${nTabla * nNum}\n`;
+    }
+    alert(cTabla);
+  }
+}
+
 //! Ejercicio 35
+
 $btn35.addEventListener('click', () => {
   const listNumer = []
   for (let i = 0; i < 20; i++) {
@@ -349,6 +802,30 @@ $btn35.addEventListener('click', () => {
   $textOpacity.innerHTML = text
   $opacity.style.opacity = 1;
 })
+
+
+function fibonacci36() {
+ 
+  let nNumero = Number.parseInt(prompt(`Ingrese un numero:`));
+  if (isNaN(nNumero)) {
+    return alert("¡ Se ingreso un numero invalido !");
+  }
+result36b.textContent=`Los primeros ${nNumero}, terminos de la serie fibonacci son:`
+  let nSuma = 0;
+  let nNum1 = 0;
+  let nNum2 = 1;
+  let cSerie= "";
+
+  for (n = 1; n <= nNumero; n++) {
+    cSerie = cSerie + nNum2 + " ";
+    nSuma = nNum1 + nNum2;
+    nNum1 = nNum2;
+    nNum2 = nSuma;
+  }
+result36.textContent =`${cSerie}`
+}
+
+
 
 //! Ejercicio 40
 $btn40.addEventListener('click', () => {
@@ -392,36 +869,6 @@ $btn38.addEventListener('click', () => {
 })
 
 
-//! Ejercicio 21
-$btn21.addEventListener('click', () => {
-  const number = parseInt($numberFactorial.value);
-  let result = 1;
-  if ($numberFactorial.value.length == 0) {
-    return alert('Ingrese numero a validar')
-  }
-
-  for (let i = 1; i <= number; i++) {
-    result = result * i
-  }
-
-  $textFactorial.innerHTML = `El factorial de ${number}! es ${result}`
-})
 
 
-//! Ejercicio 24
-$btn24.addEventListener('click', () => {
-  const number = parseInt($numberPar.value);
-  let result = 0;
 
-  if ($numberPar.value.length == 0) {
-    return alert('Ingrese numero a validar')
-  }
-
-  for (let i = 1; i <= number; i++) {
-    if (i % 2 === 0) {
-      result += i
-    }
-  }
-
-  $textPar.innerHTML = `El suma de pares es de: ${result}`
-})

@@ -640,7 +640,7 @@ Proceso pregunta23
 	suma = 0
 	Si n >= 1 Entonces
 		Para i = 1 Hasta n Hacer
-			Si i mod 2 = 0	Entonces
+			Si i mod 2 = 1	Entonces
 				suma = suma + i
 			FinSi
 			FinPara
