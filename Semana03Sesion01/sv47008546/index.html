@@ -358,6 +358,160 @@ document.getElementById("demo29").innerHTML = $$$ + $myMoney;
       <h5 id="result173"></h5>
       <h5 id="result174"></h5>
 
+      <h2>JavaScript const</h2>
+      <p>Declaring a constant array does NOT make the elements unchangeable:</p>   
+      <p id="demo"></p>
+      
+      <script>
+      // Create an Array:
+      const cars = ["Saab", "Volvo", "BMW"];
+      
+      // Change an element: [el valor asignado dentro de los corchetes señala al parametro declarado en el array, 
+      //siempre empieza en "[0]" como primer elemento, si colocamos [1] ira por el segundo parametro declarado en nuestro array]
+      cars[0] = "Toyota";
+      
+      // Add an element:
+      cars.push("Audi");
+      
+      // Display the Array:
+      document.getElementById("demo").innerHTML = cars; 
+      </script>
+      
+
+      <h2>JavaScript const</h2>
+      <p>Declaring a constant object does NOT make the objects properties unchangeable:</p>     
+      <p id="demo"></p>
+      
+      <script>
+      // Create an object:
+      const car = {type:"Fiat", model:"500", color:"white"};
+      
+      // Change a property:
+      car.color = "red";
+      
+      // Add a property:
+      car.owner = "Johnson";
+      
+      // Display the property:
+      document.getElementById("demo").innerHTML = "Car owner is " + car.owner; 
+      </script>
+
+<h1>JavaScript Arithmetic</h1>
+<h2>The ++ Operator</h2>
+
+<p id="demo"></p>
+
+<script>
+let x = 5;
+x++;  // representa que X aumentara en una unidad la proxima vez que se llame a la variable.
+let z = x;
+document.getElementById("demo").innerHTML = z;
+</script>
+
+
+<h1>JavaScript Assignments</h1>
+<h2>Left Shift Assignment</h2>
+<h3>The <<= Operator</h3>
+<p id="demo"></p>
+
+<script>
+let x = -100;
+x <<= 1; //realiza una secuencia en cadena [1] valor actual de [x=-100] aumenta [-100] = -200; [2] valor actual de X[1] = -200 --> auemnta [-200]
+// = -400; [3] valor de X[2] = -400 --> aumenta el mismo valor [-400] --> x[3]=-800; sigue sucesivamente... 
+document.getElementById("demo").innerHTML = "Value of x is: " + x;
+</script>
+
+<h1>JavaScript Assignments</h1>
+<h2>Right Shift Assignment</h2>
+<h3>The >>= Operator</h3>
+<p id="demo"></p>
+
+<script>
+let x = -100;
+x >>= 1; // realiza una secuencia en cadena [1] valor actual de [x=-100] disminuye a su mitad [-50]; x[1] = -50 (valor actual); x[2]= -25
+// de su valor actual x[1]=-50 disminuye su mitad dejando como resultado x[2] = -25....asi seguira sucesivamente.
+document.getElementById("demo").innerHTML = "Value of x is: " + x;
+</script>
+
+
+<h1>JavaScript Assignments</h1>
+<h2>Logical AND Assignment</h2>
+<h3>The &&= Operator</h3>
+<p>If the first value is true, the second value is assigned.</p>
+<p id="demo"></p>
+
+<script>
+let x = 100;
+x &&= 5; //Si el primer valor es considera TRUE, el segundo valor reemplazara al primero
+document.getElementById("demo").innerHTML = "Value of x is: " + x;
+</script>
+
+
+<h1>JavaScript Assignments</h1>
+<h2>Logical OR Assignment</h2>
+<h3>The ||= Operator</h3>
+<p>If the first value is false, the second value is assigned:</p>
+<p id="demo"></p>
+
+<script>
+let x = undefined;
+x ||= 5; // Si el primer valor es considerado False [undefined], el segundo valor [5] reemplazara al primero [undefined]
+document.getElementById("demo").innerHTML = "Value of x is: " + x;
+</script>
+
+<h1>JavaScript Assignments</h1>
+<h2>The ??= Operator</h2>
+<p>The ??= operator is used between two values. If the first value is undefined or null, the second value is assigned.</p>
+<p id="demo"></p>
+
+<script>
+let x;
+document.getElementById("demo").innerHTML = x ??= 5; // Si el primer valor es undefined o nulo, el segundo valor es asignado.
+</script>
+
+
+<h2>JavaScript Booleans</h2>
+<p>Booleans can have two values: true or false:</p>
+<p id="demo"></p>
+
+<script>
+let x = 5;
+let y = 5;
+let z = 6;
+
+document.getElementById("demo").innerHTML =
+(x == y) + "<br>" + (x == z);
+</script>
+
+
+<h1>JavaScript Operators</h1>
+<h2>The typeof Operator</h2>
+<p>The typeof operator returns the type of a variable or an expression.</p>
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+typeof "" + "<br>" +
+typeof "John" + "<br>" + 
+typeof "John Doe";
+</script>
+
+<h1>JavaScript Operators</h1>
+<h2>The typeof Operator</h2>
+<p>The typeof operator returns the type of a variable or an expression.</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+typeof "" + "<br>" +   // da como resultado = "String"
+typeof "John" + "<br>" + // da como resultado = "String"
+typeof 16; // da como resultado = "Number"
+</script>
+
+
+
+
 
 
 
