@@ -502,28 +502,27 @@ function ejercicio14(){
     La ganancia para el vendedor es de 8,25 % de la venta. Realizar un algoritmo en Pseint que dado un numero
     de CDs a vender calcule el precio total para el cliente y la ganancia para el vendedor.  */
 
-function ejercicio18(){
-  let Num=Number.parseInt(prompt("Por favor, ingrese la cantidad de productos a comprar:"));
-  let Val_Und=0;Total_Pagar=0;Comm=0;
-  
-  if (Num>0 && Num<=9){
-      Val_Und=10;
-  }
-  else if (Num>9 && Num<=99) {
-      Val_Und=8;
-  }
-  else if (Num>99 && Num<=499) {
-      Val_Und=7;
-  }
-  else {
-      Val_Und=6;
-  }
+  function ejercicio18(){
+    let Num=Number.parseInt(prompt("Por favor, ingrese la cantidad de productos a comprar:"));
+    let Val_Und=0;Total_Pagar=0;Comm=0;
+    
+    if (Num>0 && Num<=9){
+        Val_Und=10;
+    }
+    else if (Num>9 && Num<=99) {
+        Val_Und=8;
+    }
+    else if (Num>99 && Num<=499) {
+        Val_Und=7;
+    }
+    else {
+        Val_Und=6;
+    }
 
-  Total_Pagar=Num*Val_Und;
-  Comm=0.0825*Total_Pagar;
-  alert("Importe Total: "+ Total_Pagar + "\nComision del vendedor: " + Comm);
-
-}     
+    Total_Pagar=Num*Val_Und;
+    Comm=0.0825*Total_Pagar;
+    alert("Importe Total: "+ Total_Pagar + "\nComision del vendedor: " + Comm);
+ }     
 
 
 
@@ -684,6 +683,14 @@ else{
 
 
 /*34.	Hacer un algoritmo que imprima la tabla de multiplicar de los numeros del uno nueve   */
+function ejercicio34(){
+  let Prod=0;
+  for (let i = 1; i < 13; i++) {
+    Prod=i*9;
+    console.log("9x"+i + "="+Prod);
+  }
+}
+
 
 /*35.	Hacer un algoritmo que nos permita saber cual es el numero mayor y menor,
     se debe ingresar solo veinte numeros. /*
@@ -691,31 +698,31 @@ else{
 
 /*36.	Hacer un algoritmo para calcular la serie de Fibonacc.     */
 function ejercicio36(){
-let Num =Number.parseInt(prompt("Por favor, ingresa el numero de Terminos de la serie de Fonobacci:"));
-let Arreglo=[]
-
-if (Num>=1){
+  let Num =Number.parseInt(prompt("Por favor, ingresa el numero de Terminos de la serie de Fonobacci:"));
+  let Arreglo=[]
 
   if (Num>=1){
-    Arreglo[0]=0
-  }
 
-  if (Num>=2){
-    Arreglo[1]=1
-  }
-
-  if (Num>=3) {
-    for (let i=2;i<Num;i++){
-      Arreglo[i]=Arreglo[i-1]+Arreglo[i-2];   
+    if (Num>=1){
+      Arreglo[0]=0
     }
+
+    if (Num>=2){
+      Arreglo[1]=1
+    }
+
+    if (Num>=3) {
+      for (let i=2;i<Num;i++){
+        Arreglo[i]=Arreglo[i-1]+Arreglo[i-2];   
+      }
+    }
+
+    alert ("Los " + Num + " Terminos de la serie de Finobacci son:"+ "\n "+Arreglo);
   }
 
-  alert ("Los " + Num + " Terminos de la serie de Finobacci son:"+ "\n "+Arreglo);
-}
-
-else{
-  alert("Ingrese un valor valido");
-}
+  else{
+    alert("Ingrese un valor valido");
+  }
 }
 
 
