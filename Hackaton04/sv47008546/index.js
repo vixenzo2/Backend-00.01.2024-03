@@ -31,9 +31,11 @@ const $btn3b = document.getElementById('btn-3b')
 const $btn3a = document.getElementById('btn-3a')
 
 const $btn4b = document.getElementById('btn-4b')
+const $sum4 = document.getElementById('sum4')
 const $number4a = document.getElementById('number-4a')
 
 const $btn5a = document.getElementById('btn-5a')
+
 
 const $btn9 = document.getElementById('btn-9')
 const $number9b = document.getElementById('number-9b')
@@ -45,6 +47,8 @@ const $btn10 = document.getElementById('btn-10')
 const $btn11 = document.getElementById('btn-11')
 
 const $btn12 = document.getElementById('btn-12')
+
+const $btn21 = document.getElementById('btn-21')
 
 const sumOfTwoNumbers = ($num1, $num2) => {
   const sum = $num1 + $num2;
@@ -197,25 +201,28 @@ $btn3a.addEventListener('click', () => {
 
 //! EJERCICIO 4 - RETO 2
 //4.- Crear una función que reciba n cantidad de argumentos y los sume (utilizar parametros rest)    
-
-const nArgumentos = (nArgument) => {
-  let suma4 = 0;
-  console.log(nArgument.length)
-  for (let i = 0; i <= nArgument.length - 1; i++) {
-    suma4 = suma4 + i
-
-  }
-  return suma4
-  $btn4b.addEventListener('click', () => {
-    if ($number4a.value = null || $number4a == undefined) {
-      return alert('Ingrese numeros a calcular')
-    }
-    //alert(`la suma de la cantidad de argumentos es: ${nArgument($number4a.value.split(',').map(Number))}`)
-    alert(`la suma de la cantidad de argumentos es: ${suma4}`)
-
-  }
-  )
+function sumAll(...theArgs) {
+  $sum4 = 0;
+  for (const $number4a of theArgs)
+    $sum4 = $sum4 + $number4a;
+  return $sum4;
 }
+//alert(`la suma de la cantidad de argumentos es: ${sumAll(1,5,9,20)}`)  
+//console.log(sumAll(1,5))
+//console.log(sumAll(1,5,9))
+$btn4b.addEventListener('click', () => {
+  //if ($number4a == null || $number4a == undefined) {
+  // return alert('Ingrese numeros a calcular')
+  // } else {//return alert(`sumAll(${sum4+$number4a})`)  
+  //console.log(sumAll(1,5,9))
+  //alert(`la suma de la cantidad de argumentos es: ${sumAll($number4a.value.split(',').map(Number))}`)  
+
+  return alert(`la suma de a cantidad de argumentos es:`, $sum4)
+  // }
+})
+
+
+
 
 //! EJERCICIO 5 - RETO 2
 
@@ -228,6 +235,14 @@ $btn5a.addEventListener('click', () => {
 })
 //console.log(arrayFiltrada)
 
+
+//! EJERCICIO 6 - RETO 2
+const hallarMaxMin = (lista6) =>{
+  return Math.max(...lista6) - Math.min(...lista6)
+}
+const lista6 = [1, 2, 3, 4, 5];
+
+console.log(hallarMaxMin(lista6))
 
 //! EJERCICIO 9 - RETO 2
 
@@ -261,7 +276,7 @@ $btn9.addEventListener('click', () => {
     }
   }).join('');
 })
-console.log(handlerIndex)
+//console.log(handlerIndex)
 
 //! EJERCICIO 10
 //10-.Escriba una función que convierta un objeto en una matriz, donde cada elemento representa un par clave-valor.
@@ -307,3 +322,59 @@ const nombres12 = names12.map((item) => item.name)
 $btn12.addEventListener('click', () => {
   return alert(`La nueva matriz es ${nombres12}`)
 })
+
+//! EJERCICIO 13
+const objectToArray= {likes: 2, dislikes: 3, followers: 10};
+const newLista = Object.entries(objectToArray)
+
+//console.log(newLista)
+
+
+//! EJERCICIO 15
+const numberArrays = [2, 3, 1, 0]
+const newArrays = numberArrays.map((item) => item * numberArrays.length)
+
+//console.log(newArrays)
+
+//! EJERCICIO 17
+
+const hallarDiferencia = (lista) => {
+return Math.max(...lista) - Math.min(...lista)
+}
+const listaNumeros = [10, 4, 1, 4, -10, -50, 32, 21]
+//console.log(hallarDiferencia(listaNumeros))
+
+//! EJERCICIO 20
+String.prototype.vreplace = function (vocal) {
+  return this.replace(/[aeiou]/g,vocal)
+}
+const cadena20 = 'esta es una nueva cadena de uuuuuuuu'
+const nuevaCadena = cadena20.vreplace('i')
+//console.log(nuevaCadena) 
+
+
+//! EJERCICIO 21 {el split separa en silabas una frase "importante darle el espacio ("1espacio o no funciona")"}
+
+const encontrarNemo = (cadena) => {
+  
+  const palabras = cadena.split(" ");
+  const indiceNemo = palabras.indexOf("Nemo");
+  if (indiceNemo !== -1) {
+    return `El indice de Nemo es: ${indiceNemo + 1}`
+  } else {
+    return `Nemo no Existe`
+  }
+}
+//console.log(encontrarNemo('El pequeño pescado odioso llamado Nemo'))
+
+//! EJERCICIO 22 {el split separa en silabas una frase "importante darle el espacio ("1espacio o no funciona")"}
+//! "join" une varios elementos de una lista en un solo elemento
+
+const capitalizar = (cadena) =>{
+  return cadena.split(' ').map(item => item.slice(0,-1) +
+  item.slice(-1).toUpperCase()).join(' ')
+}
+
+//console.log(capitalizar('hello'))
+
+

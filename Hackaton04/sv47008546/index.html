@@ -297,11 +297,11 @@ const sumOfCubes = (lista) => {
             <div class="container-example">
                 <input id="number-4a" class="custom-input" placeholder="Ingrese numeros" />
                 <button id="btn-4b">calcular</button>
+                <!-- <button onclick="sumAll(1,5,9)">Validar</button> -->
             </div>
 
             <pre>
       <code>
-
         const retornarTipo = (datoTipo) => {
             return alert(typeof datoTipo)
           }
@@ -333,6 +333,34 @@ const sumOfCubes = (lista) => {
       </pre>
     </div>
     </div>
+
+
+        <!-- Ejercicio 6 - Reto 2-->
+        <div class="list">
+            <h5>
+                6-.Cree una función que tome una matriz de números y devuelva los números mínimos y máximos, en ese orden
+                minMax([1, 2, 3, 4, 5]) ➞ [1, 5] </h5>
+            <div class="divider"></div>
+            <div class="container-example"></div>
+            <button id="btn-6">calcular</button>
+            <pre>
+            <code>
+      
+              const retornarTipo = (datoTipo) => {
+                  return alert(typeof datoTipo)
+                }
+               $btn3a.addEventListener('click', () =>{
+                  retornarTipo ({name: "Steven", age:32})
+               })
+            </code>
+          </pre>
+        </div>
+        </div>
+
+             
+             
+
+
 
     <!-- Ejercicio 9- Reto 2 -->
     <div class="list">
@@ -413,15 +441,16 @@ const sumOfCubes = (lista) => {
   </pre>
     </div>
 
-        <!-- Ejercicio 11 - Reto 2-->
-        <div class="list">
-            <h5>
-        11-. Cree la función que toma una matriz con objetos y devuelve la suma de los presupuestos de las personas. </h5>
-            <div class="divider"></div>
-            <div class="dos-digitos"></div>
-            <button id="btn-11">calcular</button>
-    
-            <pre>
+    <!-- Ejercicio 11 - Reto 2-->
+    <div class="list">
+        <h5>
+            11-. Cree la función que toma una matriz con objetos y devuelve la suma de los presupuestos de las personas.
+        </h5>
+        <div class="divider"></div>
+        <div class="dos-digitos"></div>
+        <button id="btn-11">calcular</button>
+
+        <pre>
         <code>
             const hallarPresupuesto = (lista) => {
                 return lista.reduce((total, persona)=> total + persona.budget,0)
@@ -433,7 +462,7 @@ const sumOfCubes = (lista) => {
                 })
         </code>
       </pre>
-        </div>
+    </div>
 
     <!-- Ejercicio 12 - Reto 2-->
     <div class="list">
@@ -458,6 +487,149 @@ const sumOfCubes = (lista) => {
           })
         </code>
       </pre>
+    </div>
+
+        <!-- Ejercicio 13 - Reto 2-->
+        <div class="list">
+            <h5>
+                13-.Escriba una función que convierta un objeto en una matriz de claves y valores
+            </h5>
+            <div class="divider"></div>
+            <div class="dos-digitos"></div>
+            <button id="btn-12">calcular</button>
+    
+            <pre>
+            <code>
+                const objectToArray= {likes: 2, dislikes: 3, followers: 10};
+                const newLista = Object.entries(objectToArray)
+                console.log(newLista)
+            </code>
+          </pre>
+        </div>
+
+
+             
+
+    <!-- Ejercicio 15 - Reto 2-->
+    <div class="list">
+        <h5>
+            15-.Cree una función para multiplicar todos los valores en una matriz por la cantidad de valores en la
+            matriz dada
+            multiplyByLength([2, 3, 1, 0]) ➞ [8, 12, 4, 0]
+
+        </h5>
+        <div class="divider"></div>
+        <div class="dos-digitos"></div>
+        <button onclick="encontrarNemo()">Validar</button>
+        <pre>
+    <code>
+        const numberArrays = [2, 3, 1, 0]
+        const newArrays = numberArrays.map((item) => item * numberArrays.length)
+        console.log(newArrays)
+    </code>
+  </pre>
+    </div>
+
+
+
+    <!-- Ejercicio 17 - Reto 2-->
+    <div class="list">
+        <h5>
+            17-.Cree una función que tome una matriz y devuelva la diferencia entre los números más grandes y más
+            pequeños.
+            diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82
+        </h5>
+        <div class="divider"></div>
+        <div class="dos-digitos"></div>
+        <button onclick="encontrarNemo()">Validar</button>
+        <pre>
+        <code>
+            const hallarDiferencia = (lista) => {
+                return Math.max(...lista) - Math.min(...lista)
+                }
+                const listaNumeros = [1,2,3,4,5,6,8,9,10,9999]
+                console.log(hallarDiferencia(listaNumeros))
+        </code>
+      </pre>
+    </div>
+
+
+
+    <!-- Ejercicio 20 - Reto 2-->
+    <div class="list">
+        <h5>
+            20-.Escriba una función, .vreplace () que extienda el prototipo de cadena reemplazando todas las vocales en
+            una cadena con una vocal especificada.
+            "apples and bananas".vreplace("u") ➞ "upplus und bununus"
+
+        </h5>
+        <div class="divider"></div>
+        <div class="dos-digitos"></div>
+        <button onclick="encontrarNemo()">Validar</button>
+
+
+        <pre>
+        <code>
+            String.prototype.vreplace = function (vocal) {
+                return this.replace(/[aeiou]/g,vocal)
+              }
+              const cadena20 = 'esta es una nueva cadena de uuuuuuuu'
+              const nuevaCadena = cadena20.vreplace('i')
+              console.log(nuevaCadena) 
+        </code>
+      </pre>
+    </div>
+
+    <!-- Ejercicio 21 - Reto 2-->
+    <div class="list">
+        <h5>
+            21-.Te dan una cadena de palabras. Debe encontrar la palabra "Nemo" y devolver una cadena como esta:
+            "¡Encontré a Nemo en [el orden de la palabra que encuentra nemo]!".
+            findNemo("I am finding Nemo !") ➞ "I found Nemo at 4!"
+        </h5>
+        <div class="divider"></div>
+        <div class="dos-digitos"></div>
+        <button onclick="encontrarNemo()">Validar</button>
+
+
+        <pre>
+        <code>
+            const encontrarNemo = (cadena) => {
+  
+                const palabras = cadena.split(" ");
+                const indiceNemo = palabras.indexOf("Nemo");
+                if (indiceNemo !== -1) {
+                  return `El indice de Nemo es: ${indiceNemo + 1}`
+                } else {
+                  return `Nemo no Existe`
+                }
+              }
+        </code>
+      </pre>
+    </div>
+
+    <!-- Ejercicio 22 - Reto 2-->
+    <div class="list">
+        <h5>
+            22-.Cree una función que capitalice(Poner mayuscula) la última letra de cada palabra.
+            capLast("hello") ➞ "hellO" // join = unir
+
+        </h5>
+        <div class="divider"></div>
+        <div class="dos-digitos"></div>
+        <button onclick="encontrarNemo()">Validar</button>
+
+
+        <pre>
+    <code>
+        const capitalizar = (cadena) =>{
+            return cadena.split(' ').map(item => item.slice(0,-1) +
+            item.slice(-1).toUpperCase()).join(' ')
+          }
+          
+          console.log(capitalizar('Hello'))
+    </code>
+  </pre>
     </div>
 
 
