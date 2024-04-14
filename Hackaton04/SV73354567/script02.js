@@ -22,7 +22,7 @@ function mostrarReto2() {
             <div class="question-container1">
                 <h2>Ejercicio 1</h2>
                 <p>Utilizando función arrow, crear una función que reciba como parámetros un nombre, apellido y edad y los retorne en un string concatenado.</p> 
-                <p>“Hola mi nombre es Kevin Tenazoa Cuba y mi edad es 27”</p>
+                <p>“Hola mi nombre es Kevin Tenazoa Cuba y mi edad es 27</p>
                 <button onclick="problema(1)">Respuesta</button>
             </div>
 
@@ -179,246 +179,257 @@ function mostrarReto2() {
     // Agregar clase al contenedor del contenido del reto 2 para aplicar estilos específicos
     document.getElementById("contenidoReto").classList.add("reto1-content");
 }
-    // Función para ejecutar las soluciónes de los ejercicios
-    function problema(nroProblema) {
-        switch (nroProblema) {
-            case 1:
-                problema1();
-                break;
-            case 2:
-                problema2();
-                break;
-            case 3:
-                problema3();
-                break;
-            case 4:
-                problema4();
-                break;
-            case 5:
-                problema5();
-                break;
-            case 6:
-                problema6();
-                break;
-            case 7:
-                problema7();
-                break;
-            case 8:
-                problema8();
-                break;
-            case 9:
-                problema9();
-                break;
-            case 10:
-                problema10();
-                break;
-            case 11:
-                problema11();
-                break;
-            case 12:
-                problema12();
-                break;
-            case 13:
-                problema13();
-                break;
-            case 14:
-                problema14();
-                break;
-            case 15:
-                problema15();
-                break;
-            case 16:
-                problema16();
-                break;
-            case 17:
-                problema17();
-                break;
-            case 18:
-                problema18();
-                break;
-            case 19:
-                problema19();
-                break;
-            case 20:
-                problema20();
-                break;
-            case 21:
-                problema21();
-                break;
-            case 22:
-                problema22();
-                break;
-            default:
-                break;
-        }
+// Función para ejecutar las soluciónes de los ejercicios
+function problema(nroProblema) {
+    switch (nroProblema) {
+        case 1:
+            problema1();
+            break;
+        case 2:
+            problema2();
+            break;
+        case 3:
+            problema3();
+            break;
+        case 4:
+            problema4();
+            break;
+        case 5:
+            problema5();
+            break;
+        case 6:
+            problema6();
+            break;
+        case 7:
+            problema7();
+            break;
+        case 8:
+            problema8();
+            break;
+        case 9:
+            problema9();
+            break;
+        case 10:
+            problema10();
+            break;
+        case 11:
+            problema11();
+            break;
+        case 12:
+            problema12();
+            break;
+        case 13:
+            problema13();
+            break;
+        case 14:
+            problema14();
+            break;
+        case 15:
+            problema15();
+            break;
+        case 16:
+            problema16();
+            break;
+        case 17:
+            problema17();
+            break;
+        case 18:
+            problema18();
+            break;
+        case 19:
+            problema19();
+            break;
+        case 20:
+            problema20();
+            break;
+        case 21:
+            problema21();
+            break;
+        case 22:
+            problema22();
+            break;
+        default:
+            break;
+    }
+}
+
+// Funciones para resolver los ejercicios
+
+function problema1() {
+    const Saludo = (nombre, apellido, edad) => {
+        return `Hola mi nombre es ${nombre} ${apellido} y mi edad es ${edad}`;
+    };
+    const resultado = Saludo("Kevin", "Tenazoa Cuba", 27);
+    alert(resultado);
+    console.log("Problema1")
+}
+
+
+function problema2() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 1, 5, 9, el cual el Resultado es: " + sumcub(1, 5, 9));
+    console.log("Problema2")
+}
+
+
+function problema3() {
+    function obtenerTipo(valor) {
+        return typeof valor;
     }
 
-    function problema1() {
-        function sumar(n1, n2) {
-            let resultado;
-            resultado = n1 + n2;
-            return resultado;
-        }
-        alert("Se esta realizando la suma de 17+19, el cual el Resultado es: " + sumar(17, 19));
-        console.log("Ejercicio1")
-    }
+    const valor1 = 10;
+    const valor2 = "Hackaton04";
+    const valor3 = false;
+    const valor4 = [];
+
+    alert("Solucion se mostrara en consola");
+    alert("Datos a mostrar: Number, String, Boolean, Objeto");
+    console.log(`El tipo de dato de ${valor1} es ${obtenerTipo(valor1)}`);
+    console.log(`El tipo de dato de ${valor2} es ${obtenerTipo(valor2)}`);
+    console.log(`El tipo de dato de ${valor3} es ${obtenerTipo(valor3)}`);
+    console.log(`El tipo de dato de ${valor4} es ${obtenerTipo(valor4)}`);
+    console.log("Problema3")
+}
 
 
-    function problema2() {
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio2")
+function problema4() {
+    function sumar(...numeros) {
+        return numeros.reduce((suma, num) => suma + num, 0);
     }
+           
+    alert("La suma de n numeros (150,6,9,50,10) es: "+sumar(150,6,9,50,10));    
+    console.log("Problema4") 
+}
 
-    function problema3(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
 
-    function problema5(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
+function problema5() {
+    function filtrarStrings(arr) {
+        return arr.filter(valor => typeof valor === "string");
+      }
+      const valores = [270, "Hackaton", false, "BackEnd", 4, "Kevin"];    
+      const stringsFiltrados = filtrarStrings(valores);
+      alert("Los valores ingresados son: 270, Hackaton, false, BackEnd, 4, Kevin");
+      alert("Los Strings son: "+stringsFiltrados);
+      console.log("Problema5")
 
-    function problema6(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
+}
+function problema7() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
     }
-    function problema7(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema8(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema9(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema10(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema11(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema12(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema13(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema14(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema15(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema16(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
-    function problema17(){
-        function sumcub(n1, n2, n3) {
-            let resultado;
-            resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-            return resultado;
-        }
-        alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-        console.log("Ejercicio3")
-        
-    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
 
-    function problema19(){
-        alert("hola")
+}
+function problema8() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
     }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema9() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema10() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema11() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema12() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema13() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema14() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema15() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema16() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+function problema17() {
+    function sumcub(n1, n2, n3) {
+        let resultado;
+        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+        return resultado;
+    }
+    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+    console.log("Ejercicio3")
+
+}
+
+function problema19() {
+    alert("hola")
+}
 
 

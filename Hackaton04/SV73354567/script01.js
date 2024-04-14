@@ -152,7 +152,7 @@ function sumcub(n1, n2, n3) {
     resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
     return resultado;
 }
-alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
+alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es: " + sumcub(3, 2, 10));
 console.log("Ejercicio3")
 }
 
