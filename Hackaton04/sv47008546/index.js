@@ -6,6 +6,7 @@ const $btn1 = document.getElementById('btn-1')
 const $num3 = document.getElementById('number-3')
 const $num4 = document.getElementById('number-4')
 const $btn2 = document.getElementById('btn-2')
+
 const $num5 = document.getElementById('number-5')
 const $btn3 = document.getElementById('btn-3')
 
@@ -20,6 +21,30 @@ const $num10 = document.getElementById('number-10')
 
 const $btn5 = document.getElementById('btn-5')
 
+// PARTE 2
+
+const btn = document.getElementById("btnFlecha")
+
+const $num5b = document.getElementById('number-5b')
+const $btn3b = document.getElementById('btn-3b')
+
+const $btn3a = document.getElementById('btn-3a')
+
+const $btn4b = document.getElementById('btn-4b')
+const $number4a = document.getElementById('number-4a')
+
+const $btn5a = document.getElementById('btn-5a')
+
+const $btn9 = document.getElementById('btn-9')
+const $number9b = document.getElementById('number-9b')
+const $number9a = document.getElementById('number-9a')
+const $reemplazar9 = document.getElementById('reemplazar9')
+
+const $btn10 = document.getElementById('btn-10')
+
+const $btn11 = document.getElementById('btn-11')
+
+const $btn12 = document.getElementById('btn-12')
 
 const sumOfTwoNumbers = ($num1, $num2) => {
   const sum = $num1 + $num2;
@@ -125,4 +150,160 @@ $btn5.addEventListener('click', () => {
   }
 
   alert(`${$num8.value} ${$num9.value} ${$num10.value} = ${resultado}`)
+})
+
+
+
+// !     EJERCICIO 1 - RETO 2
+
+const datos = (nombre, apellido, edad) => {
+  return alert(`Hola mi nombre es ${nombre} ${apellido} y mi edad ${edad}`)
+}
+
+btn.addEventListener('click', () => {
+  datos("Antony", "Castro", 32)
+
+})
+
+// result1.textContent = `Hola mi nombre es ${nombre} ${apellido} y mi edad ${edad}`
+//! EJERCICIO 2 - RETO 2
+
+const sumOfCubes2 = (listaNumbers) => {
+  let sum = 0;
+  console.log(listaNumbers.length)
+  for (let i = 0; i <= listaNumbers.length - 1; i++) {
+    sum += Math.pow(listaNumbers[i], 3);
+    console.log(sum)
+  }
+  return sum;
+};
+// console.log(sumOfCubes(1, 5, 9));
+
+$btn3b.addEventListener('click', () => {
+  if ($num5b.value == null || $num5b.value == undefined) {
+    return alert('Ingrese numeros a calcular')
+  }
+  alert(`La suma de cubos es: ${sumOfCubes2($num5b.value.split(',').map(Number))}`)
+})
+
+//! EJERCICIO 3 - RETO 2
+
+const retornarTipo = (datoTipo) => {
+  return alert(typeof datoTipo)
+}
+$btn3a.addEventListener('click', () => {
+  retornarTipo({ name: "Steven", age: 32 })
+})
+
+//! EJERCICIO 4 - RETO 2
+//4.- Crear una función que reciba n cantidad de argumentos y los sume (utilizar parametros rest)    
+
+const nArgumentos = (nArgument) => {
+  let suma4 = 0;
+  console.log(nArgument.length)
+  for (let i = 0; i <= nArgument.length - 1; i++) {
+    suma4 = suma4 + i
+
+  }
+  return suma4
+  $btn4b.addEventListener('click', () => {
+    if ($number4a.value = null || $number4a == undefined) {
+      return alert('Ingrese numeros a calcular')
+    }
+    //alert(`la suma de la cantidad de argumentos es: ${nArgument($number4a.value.split(',').map(Number))}`)
+    alert(`la suma de la cantidad de argumentos es: ${suma4}`)
+
+  }
+  )
+}
+
+//! EJERCICIO 5 - RETO 2
+
+const array5 = [1, 2, 3, 'lunes', 'martes', 'miercoles']
+const arrayFiltrada = array5.filter(Element => typeof Element !== 'string')
+
+$btn5a.addEventListener('click', () => {
+  return alert(`La nueva lista es: ${arrayFiltrada}`)
+
+})
+//console.log(arrayFiltrada)
+
+
+//! EJERCICIO 9 - RETO 2
+
+const handlerIndex = (palabra, caracter) => {
+  const indices = []
+
+
+  for (let i = 0; i <= palabra.length; i++) {
+    if (palabra[i] === caracter) {
+      indices.push(i)
+    }
+  }
+  return indices
+}
+
+$btn9.addEventListener('click', () => {
+  if ($number9b.value == null || $number9b.value == undefined && $number9a.value == null || $number9a.value == undefined) {
+    return alert('Ingrese numeros a calcular')
+  }
+
+  const palabra = $number9b.value;
+  const caracter = $number9a.value;
+
+  const indices = handlerIndex(palabra, caracter)
+
+  $reemplazar9.innerHTML = palabra.split('').map((letra, indice) => {
+    if (indices.includes(indice)) {
+      return `<span class="selected">${letra}</span>`
+    } else {
+      return letra
+    }
+  }).join('');
+})
+console.log(handlerIndex)
+
+//! EJERCICIO 10
+//10-.Escriba una función que convierta un objeto en una matriz, donde cada elemento representa un par clave-valor.
+//toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
+const object10 = { a: 1, b: 2 };
+//console.log(typeof(object10))
+const array10 = Object.entries(object10)
+//Se inserto las propiedades del objeto dentro una matriz
+
+$btn10.addEventListener('click', () => {
+  return alert(`La nueva matriz es ${array10}`)
+})
+//console.log(array10)
+
+//! EJERCICIO 11
+// Cree la función que toma una matriz con objetos y devuelve la suma de los presupuestos de las personas.
+
+const presupuesto = [
+  { name: "John", age: 21, budget: 23000 },
+  { name: "Steve", age: 32, budget: 40000 },
+  { name: "Martin", age: 16, budget: 2700 }
+]
+const hallarPresupuesto = (lista) => {
+  return lista.reduce((total, persona) => total + persona.budget, 0)
+  //reduce es una caracteristica que permite 
+}
+const total = hallarPresupuesto(presupuesto)
+
+$btn11.addEventListener('click', () => {
+  return alert(`la suma de los presupuestos es ${total}`)
+})
+
+//! EJERCICIO 12 - RETO 2 (item: representa el elemento y indice la posicion)
+//! names12.map((item) --> recorre todos lo)s elementos de la matrix o array
+//! => item.name --> señala que deseamos retirar de la matriz y dejaria una nueva matriz [nombres12]
+const names12 = [
+  { name: "Steve" },
+  { name: "Mike" },
+  { name: "John" }
+]
+const nombres12 = names12.map((item) => item.name)
+
+$btn12.addEventListener('click', () => {
+  return alert(`La nueva matriz es ${nombres12}`)
 })
