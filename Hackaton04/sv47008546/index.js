@@ -31,8 +31,7 @@ const $btn3b = document.getElementById('btn-3b')
 const $btn3a = document.getElementById('btn-3a')
 
 const $btn4b = document.getElementById('btn-4b')
-const $sum4 = document.getElementById('sum4')
-const $number4a = document.getElementById('number-4a')
+//const $number4a = document.getElementById('number-4a')
 
 const $btn5a = document.getElementById('btn-5a')
 
@@ -202,27 +201,26 @@ $btn3a.addEventListener('click', () => {
 //! EJERCICIO 4 - RETO 2
 //4.- Crear una función que reciba n cantidad de argumentos y los sume (utilizar parametros rest)    
 function sumAll(...theArgs) {
-  $sum4 = 0;
+  sum4 = 0;
   for (const $number4a of theArgs)
-    $sum4 = $sum4 + $number4a;
-  return $sum4;
+    sum4 = sum4 + $number4a;
+  return sum4;
 }
+//sumAll([1,5,9]);
+//console.log($number4a)
+
 //alert(`la suma de la cantidad de argumentos es: ${sumAll(1,5,9,20)}`)  
 //console.log(sumAll(1,5))
-//console.log(sumAll(1,5,9))
-$btn4b.addEventListener('click', () => {
+console.log(sumAll(1,5,9))
+//$btn4b.addEventListener('click', () => {
   //if ($number4a == null || $number4a == undefined) {
   // return alert('Ingrese numeros a calcular')
   // } else {//return alert(`sumAll(${sum4+$number4a})`)  
   //console.log(sumAll(1,5,9))
   //alert(`la suma de la cantidad de argumentos es: ${sumAll($number4a.value.split(',').map(Number))}`)  
 
-  return alert(`la suma de a cantidad de argumentos es:`, $sum4)
+//  return alert(`la suma de a cantidad de argumentos es:`, $sum4)
   // }
-})
-
-
-
 
 //! EJERCICIO 5 - RETO 2
 
@@ -237,12 +235,27 @@ $btn5a.addEventListener('click', () => {
 
 
 //! EJERCICIO 6 - RETO 2
-const hallarMaxMin = (lista6) =>{
-  return Math.max(...lista6) - Math.min(...lista6)
-}
+
 const lista6 = [1, 2, 3, 4, 5];
 
-console.log(hallarMaxMin(lista6))
+function MaxMin(){
+let maxLista6 = Math.max(...lista6)
+let minLista = Math.min(...lista6)
+if (maxLista6>0 && minLista>0){
+return alert(`El maximo numero de la lista es: ${maxLista6} y el minimo es ${minLista}`)
+}
+}
+// console.log(maxLista6)
+
+
+
+
+
+//! EJERCICIO 7 - RETO 2
+//! EJERCICIO 8 - RETO 2
+
+
+
 
 //! EJERCICIO 9 - RETO 2
 
@@ -324,25 +337,50 @@ $btn12.addEventListener('click', () => {
 })
 
 //! EJERCICIO 13
-const objectToArray= {likes: 2, dislikes: 3, followers: 10};
-const newLista = Object.entries(objectToArray)
 
+function newLista13(){
+const objectToArray= {likes: 2, dislikes: 3, followers: 10};
+const newLista13 = Object.entries(objectToArray)
+alert(`La nueva matriz es: ${newLista13}`)
+}
 //console.log(newLista)
 
+//! EJERCICIO 14
+
+  let number14 = parseInt(prompt('Ingrese el valor de n'))
+  let suma14=0;
+  let matriz14 = []
+
+  for (let i=0; i<=number14; i++)
+  suma14 += Math.pow(i,2)
+  matriz14.push(suma14)
+
+console.log(suma14)
+console.log(matriz14)
 
 //! EJERCICIO 15
+
+function ejercicio15(){
 const numberArrays = [2, 3, 1, 0]
 const newArrays = numberArrays.map((item) => item * numberArrays.length)
-
+alert(`La nueva lista es: ${newArrays}`)
+}
 //console.log(newArrays)
+
+//! EJERCICIO 16
 
 //! EJERCICIO 17
 
 const hallarDiferencia = (lista) => {
 return Math.max(...lista) - Math.min(...lista)
 }
-const listaNumeros = [10, 4, 1, 4, -10, -50, 32, 21]
-//console.log(hallarDiferencia(listaNumeros))
+const listaNumeros = [10, 4, 1, 4, -10, -50, 32, 21];
+console.log(hallarDiferencia(listaNumeros))
+
+//! EJERCICIO 18
+
+//! EJERCICIO 19
+
 
 //! EJERCICIO 20
 String.prototype.vreplace = function (vocal) {
