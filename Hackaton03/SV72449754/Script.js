@@ -393,28 +393,28 @@ else {
 
 /*11.	Hacer un algoritmo que lea tres numeros y diga cual es el mayor.  */
 function ejercicio11(){
-let Num_01 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
-let Num_02 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
-let Num_03 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
-let Mayor=0;
-if (Num_01>Num_02){
-    if (Num_01>Num_03){
-      Mayor=Num_01;
+    let Num_01 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
+    let Num_02 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
+    let Num_03 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
+    let Mayor=0;
+    if (Num_01>Num_02){
+        if (Num_01>Num_03){
+          Mayor=Num_01;
+        }
+        else{
+          Mayor=Num_03;
+        }
+    
     }
-    else{
-      Mayor=Num_03;
+    else {
+        if (Num_02>Num_03){
+          Mayor=Num_02;
+        }
+        else{
+          Mayor=Num_03;
+        }
     }
- 
-}
-else {
-    if (Num_02>Num_03){
-      Mayor=Num_02;
-    }
-    else{
-      Mayor=Num_03;
-    }
-}
-alert("El numero mayor es: " + Mayor);
+    alert("El numero mayor es: " + Mayor);
 }
 
 
@@ -422,66 +422,66 @@ alert("El numero mayor es: " + Mayor);
 
 /*12.	Hacer un algoritmo que lea dos numeros y diga cual es el mayor. */
 function ejercicio12(){
-let Num_01 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
-let Num_02 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
-let Mayor=0;
+  let Num_01 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
+  let Num_02 =Number.parseInt(prompt("Por favor, ingresa el 1er Numero:"));
+  let Mayor=0;
 
-if (Num_01>Num_02){
-    Mayor=Num_01;
-}
-else {
-    Mayor=Num_02;
-   
-}
-alert("El numero mayor es: " + Mayor);
+  if (Num_01>Num_02){
+      Mayor=Num_01;
+  }
+  else {
+      Mayor=Num_02;
+    
+  }
+  alert("El numero mayor es: " + Mayor);
 }
 
 
 
 /*13.	Hacer un algoritmo que lea una letra y diga si es una vocal */
 function ejercicio13(){
-let Var_Letter =prompt("Por favor, ingrese la Letra:");
-let Cond_01= (Var_Letter == "A" || Var_Letter == "E" || Var_Letter == "I" || Var_Letter == "O" ||Var_Letter == "U");
-let Cond_02= (Var_Letter == "a" || Var_Letter == "e" || Var_Letter == "i" || Var_Letter == "o" ||Var_Letter == "u");
+  let Var_Letter =prompt("Por favor, ingrese la Letra:");
+  let Cond_01= (Var_Letter == "A" || Var_Letter == "E" || Var_Letter == "I" || Var_Letter == "O" ||Var_Letter == "U");
+  let Cond_02= (Var_Letter == "a" || Var_Letter == "e" || Var_Letter == "i" || Var_Letter == "o" ||Var_Letter == "u");
 
-if ( Cond_01 || Cond_02) {
- 
-  alert("La letra ingresada es Vocal");
+  if ( Cond_01 || Cond_02) {
+  
+    alert("La letra ingresada es Vocal");
 
-}
+  }
 
-else{
-  alert("La letra ingresada No es Vocal");
-}
+  else{
+    alert("La letra ingresada No es Vocal");
+  }
 }
 
 
 
 /*14.	Hacer un algoritmo que lea un entero positivo del 1 al diez y al 9 y determine si es un numero primo. */
 function ejercicio14(){
-let Num=Number.parseInt(prompt("Por favor, ingresa el Numero:"));
-let cont=0;
+  let Num=Number.parseInt(prompt("Por favor, ingresa el Numero:"));
+  let cont=0;
 
-if (Num>=1 && Num<10){
-    for (let i = 1; i<= Num; i++) {
-      if((Num%i)==0){
-        console.log(i);
-        cont++;
+  if (Num>=1 && Num<10){
+      for (let i = 1; i<= Num; i++) {
+        if((Num%i)==0){
+          console.log(i);
+          cont++;
+        }
       }
-    }
 
-    if(cont==2){
-      alert("El numero es primo");
-    }
+      if(cont==2){
+        alert("El numero es primo");
+      }
 
-    else{
-      alert("El numero No es primo");
-    }
-}
-else {
-    alert("Ingrese un numero entre 1 y 9")
-   
-}
+      else{
+        alert("El numero No es primo");
+      }
+  }
+  else {
+      alert("Ingrese un numero entre 1 y 9")
+    
+  }
 }
 
 /*15.	Hacer un algoritmo que convierta centimetros a pulgadas y libras a kilogramos. */
@@ -554,25 +554,22 @@ function ejercicio18(){
 
 /*21. Hacer un algoritmo que permita calcular el factorial de un numero. */
 function ejercicio21(){
-let Num=Number.parseInt(prompt("Por favor, ingrese el numero para el calculo de Factorial:"));
-let Fact=1;
+    let Num=Number.parseInt(prompt("Por favor, ingrese el numero para el calculo de Factorial:"));
+    let Fact=1;
 
 
-if (Num>0){
-    for (let i = 1; i <= Num; i++) {
-      Fact=Fact*i;
-      console.log(Fact); 
+    if (Num>0){
+        for (let i = 1; i <= Num; i++) {
+          Fact=Fact*i;
+          console.log(Fact); 
+        }
+        alert("El factorial del Numero " + Num + " es: " + Fact);
     }
-    alert("El factorial del Numero " + Num + " es: " + Fact);
-}
 
 
-else {
-  alert("Por favor,Ingrese un Numero valido");
-}
-
-
-
+    else {
+      alert("Por favor,Ingrese un Numero valido");
+    }
 }
 
 /*23.	Hacer un algoritmo en Pseint para calcular la suma de los numeros
