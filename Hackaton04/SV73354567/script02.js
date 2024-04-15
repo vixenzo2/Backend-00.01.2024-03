@@ -122,7 +122,7 @@ function mostrarReto2() {
             <div class="question-container1">
                 <h2>Ejercicio 15</h2>
                 <p>Cree una función para multiplicar todos los valores en una matriz por la cantidad de valores en la matriz dada.</p> 
-                <button onclick="problema(14)">Respuesta</button>
+                <button onclick="problema(15)">Respuesta</button>
             </div>
 
             <div class="question-container1">
@@ -168,7 +168,7 @@ function mostrarReto2() {
         </div>
 
         <div>
-        <div class="thanks-text">
+        <div class="thanks-text2">
         <a href="index.html"><p>Regresar a la página principal</p></a> 
         </div>          
         </div>      
@@ -300,136 +300,295 @@ function problema4() {
     function sumar(...numeros) {
         return numeros.reduce((suma, num) => suma + num, 0);
     }
-           
-    alert("La suma de n numeros (150,6,9,50,10) es: "+sumar(150,6,9,50,10));    
-    console.log("Problema4") 
+
+    alert("La suma de n numeros (150,6,9,50,10) es: " + sumar(150, 6, 9, 50, 10));
+    console.log("Problema4")
 }
 
 
 function problema5() {
     function filtrarStrings(arr) {
         return arr.filter(valor => typeof valor === "string");
-      }
-      const valores = [270, "Hackaton", false, "BackEnd", 4, "Kevin"];    
-      const stringsFiltrados = filtrarStrings(valores);
-      alert("Los valores ingresados son: 270, Hackaton, false, BackEnd, 4, Kevin");
-      alert("Los Strings son: "+stringsFiltrados);
-      console.log("Problema5")
+    }
+    const valores = [270, "Hackaton", false, "BackEnd", 4, "Kevin"];
+    const stringsFiltrados = filtrarStrings(valores);
+    alert("Los valores ingresados son: 270, Hackaton, false, BackEnd, 4, Kevin");
+    alert("Los Strings son: " + stringsFiltrados);
+    console.log("Problema5")
+
 
 }
+function problema6() {
+    function minMaxFromUserInput() {
+        const input = prompt("Ingrese 5 números separados por coma (,):");
+        const numeros = input.split(",").map(num => parseFloat(num.trim()));
+        if (numeros.some(isNaN)) {
+            return "Error: Por favor, ingrese solo números válidos.";
+        }
+        if (numeros.length !== 5) {
+            return "Error: Por favor, ingrese exactamente 5 números.";
+        }
+        let min = numeros[0];
+        let max = numeros[0];
+        for (let i = 1; i < numeros.length; i++) {
+            if (numeros[i] < min) {
+                min = numeros[i];
+            }
+            if (numeros[i] > max) {
+                max = numeros[i];
+            }
+        }
+        return [min, max];
+    }
+    const resultado = minMaxFromUserInput();
+    if (Array.isArray(resultado)) {
+        alert(`El número mínimo es ${resultado[0]} y el número máximo es ${resultado[1]}`);
+    } else {
+        alert(resultado);
+    }
+    console.log("Problema6")
+}
+
+
 function problema7() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function formatPhoneNumber(numbers) {
+        if (numbers.length !== 10) {
+            return "La matriz debe contener exactamente 10 enteros.";
+        }
+        if (!numbers.every(num => Number.isInteger(num) && num >= 0 && num <= 9)) {
+            return "La matriz debe contener solo enteros entre 0 y 9.";
+        }
+        const areaCode = numbers.slice(0, 3).join("");
+        const firstPart = numbers.slice(3, 6).join("");
+        const secondPart = numbers.slice(6).join("");
+        return `(${areaCode}) ${firstPart}-${secondPart}`;
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    const phoneNumber = formatPhoneNumber(numbers);
+    alert("Cadena ingresada: 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, -> " + phoneNumber); // Salida: (123) 456-7890
+    console.log("Problema7")
 }
+
+
 function problema8() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function findLargestNums(matrix) {
+        let largestNumbers = [];
+        for (let i = 0; i < matrix.length; i++) {
+            let maxNum = Math.max(...matrix[i]);
+            largestNumbers.push(maxNum);
+        }
+        return largestNumbers;
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const matrix = [
+        [4, 2, 7, 1],
+        [20, 70, 40, 90],
+        [1, 2, 0]
+    ];
+    const largestNumbers = findLargestNums(matrix);
+    alert("Las cadenas ingresadas son:" + "\n" + "[4, 2, 7, 1]" + "\n" + "[20, 70, 40, 90]" + "\n" + "[1, 2, 0]" + "\n" + "y los numeros mayores de cada uno son: " + largestNumbers); // Salida: [7, 90, 2]
+    console.log("Problema8")
 }
+
+
 function problema9() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function charIndex(word, char) {
+        const firstIndex = word.indexOf(char);
+        const lastIndex = word.lastIndexOf(char);
+        const output = `La primera "${char}" tiene índice ${firstIndex}, la última "${char}" tiene índice ${lastIndex}.`;
+        return output;
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const word = "circumlocution";
+    const char = "c";
+    const result = charIndex(word, char);
+    alert("La palabra ingresada es circumlocution" + "\n" + "El resultado es: " + result);
+    console.log("Problema9")
 }
+
 function problema10() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+    function toArray(objeto) {
+        const resultado = [];
+        for (let clave in objeto) {
+            if (objeto.hasOwnProperty(clave)) {
+                resultado.push([clave, objeto[clave]]);
+            }
+        }
         return resultado;
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const objeto = { a: 1, b: 2 };
+    const matriz = toArray(objeto);
+    alert(matriz); // Salida: [["a", 1], ["b", 2]]
+    console.log("Problema10")
 }
+
+
 function problema11() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function getBudgets(personas) {
+        return personas.reduce((suma, persona) => suma + persona.budget, 0);
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const personas = [
+        { name: "John", age: 21, budget: 23000 },
+        { name: "Steve", age: 32, budget: 40000 },
+        { name: "Martin", age: 16, budget: 2700 }
+    ];
+    const sumaPresupuestos = getBudgets(personas);
+    alert("La suma de las 3 matrices es: " + sumaPresupuestos);
+    console.log("Problema11")
 }
+
+
 function problema12() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function getStudentNames(estudiantes) {
+        return estudiantes.map(estudiante => estudiante.name);
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const estudiantes = [
+        { name: "Steve" },
+        { name: "Mike" },
+        { name: "John" }
+    ];
+    const nombresEstudiantes = getStudentNames(estudiantes);
+    alert("Matriz de nombres de estudiantes" + nombresEstudiantes);
+    console.log("Problema12")
 }
+
+
 function problema13() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function objectToArray(objeto) {
+        return Object.entries(objeto);
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const objeto = {
+        likes: 2,
+        dislikes: 3,
+        followers: 10
+    };
+    const matriz = objectToArray(objeto);
+    alert(matriz);
+    console.log("Problema13")
 }
+
+
 function problema14() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function squaresSum(n) {
+        let suma = 0;
+        for (let i = 1; i <= n; i++) {
+            suma += i * i;
+        }
+        return suma;
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const numero = 3;
+    const resultado = squaresSum(numero);
+    alert("El numero n es 3, la suma de todos los numeros cuadrados es: " + resultado);
+    console.log("Problema14")
 }
+
+
 function problema15() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function multiplyByLength(matriz) {
+        const longitud = matriz.length;
+        return matriz.map(valor => valor * longitud);
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const matriz = [2, 3, 1, 0];
+    const resultado = multiplyByLength(matriz);
+    alert("La matriz es [2, 3, 1, 0] y el resultado es " + resultado);
+    console.log("Problema15")
 }
+
+
 function problema16() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
+    function countdown(numero) {
+        const resultado = [];
+        for (let i = numero; i >= 0; i--) {
+            resultado.push(i);
+        }
         return resultado;
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const numero = 5;
+    const resultado = countdown(numero);
+    alert("El numero ingresado es 5, el resultado es: " + resultado);
+    console.log("Problema16")
 }
+
 function problema17() {
-    function sumcub(n1, n2, n3) {
-        let resultado;
-        resultado = Math.pow(n1, 3) + Math.pow(n2, 3) + Math.pow(n3, 3);
-        return resultado;
+    function diffMaxMin(matriz) {
+        const minimo = Math.min(...matriz);
+        const maximo = Math.max(...matriz);
+        const diferencia = maximo - minimo;
+        return `El menor numero es ${minimo}, y el mayor es ${maximo}, y la diferencia es ${diferencia}.`;
     }
-    alert("Se esta realizando la Suma de cubos de 3, 2, 10, el cual el Resultado es:" + sumcub(3, 2, 10));
-    console.log("Ejercicio3")
-
+    const matriz = [10, 4, 1, 4, -10, -50, 32, 21];
+    const diferencia = diffMaxMin(matriz);
+    alert(diferencia);
+    console.log("Problema17")
 }
+
+
+function problema18() {
+    function filterList(matriz) {
+        return matriz.filter(valor => typeof valor === "number");
+    }
+    const matriz = [1, 2, 3, "x", "y", 10];
+    const nuevaMatriz = filterList(matriz);
+    alert("Nueva matriz de enteros es: " + nuevaMatriz); // Resultado: [1, 2, 3, 10]
+    console.log("Problema18")
+}
+
 
 function problema19() {
-    alert("hola")
+    function repeat(elemento, veces) {
+        const resultado = [];
+        for (let i = 0; i < veces; i++) {
+            resultado.push(elemento);
+        }
+        return resultado;
+    }
+    const elemento = 13;
+    const veces = 5;
+    const resultado = repeat(elemento, veces);
+    alert("Primer argumento es 13 y el Segundo argumento es 5, el resultado es: " + resultado);
+    console.log("Problema19")
+}
+
+
+function problema20() {
+    String.prototype.vreplace = function (reemplazo) {
+        return this.replace(/[aeiou]/g, reemplazo);
+    };
+    const original = "manzanas y platanos";
+    const resultado = original.vreplace("u");
+    alert("Cadena ingresada es: manzanas y platanos " + resultado);
+    console.log("Problema20")
+}
+
+function problema21() {
+    function findNemo(cadena) {
+        const palabras = cadena.split(" ");
+        const posicion = palabras.indexOf("Nemo");
+        if (posicion !== -1) {
+            return `Encontre a Nemo en la posicion ${posicion + 1}!`;
+        } else {
+            return "Nemo not found!";
+        }
+    }
+    const cadena = "Encontre a Nemo !";
+    const resultado = findNemo(cadena);
+    alert(resultado);
+    console.log("Problema21")
+}
+
+
+function problema22() {
+    function capLast(cadena) {
+        const palabras = cadena.split(" ");
+        const palabrasCapitalizadas = palabras.map(palabra => {
+            const ultimoCaracter = palabra.charAt(palabra.length - 1);
+            const palabraCapitalizada = palabra.slice(0, -1) + ultimoCaracter.toUpperCase();
+            return palabraCapitalizada;
+        });
+        return palabrasCapitalizadas.join(" ");
+    }
+    const cadena = "hola hundo";
+    const resultado = capLast(cadena);
+    alert("Palabra ingresada es hola mundo, el resultado es: " + resultado);
+    console.log("Problema22")
 }
 
 

@@ -113,3 +113,23 @@ button:hover {
     100% { transform: scale(1); }
 }
 
+/* Reto 02*/
+.thanks-text2 {
+    width: 100%;
+    text-align: center;
+    margin-top: 230px;    
+}
+.thanks-text2 a{
+    font-size: 25px; /* Tamaño de la fuente */    
+}
+.thanks-text2 p{
+    font-weight: bold; /* Negrita */    
+    font-family: Arial, sans-serif; /* Fuente */
+    animation: pulse 1.5s infinite; /* Animación de pulso */ 
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
