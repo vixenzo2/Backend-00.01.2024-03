@@ -51,13 +51,17 @@ p {
 
 button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     background-color: #3498db;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-left: 310px;
+    margin-top: 5px;
+    width: 210px;
+    
 }
 
 button:hover {
@@ -86,3 +90,39 @@ button:hover {
 .button-container button {
     animation: bounce 2s ease infinite;
 }
+
+.question-container {
+    margin-bottom: 20px;
+    border: 5px solid #a0ee47;
+    padding: 10px;
+    border-radius: 37px;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre columnas */  
+}
+
+.thanks-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 250px;
+}
+
+.thanks-text p {
+    font-size: 42px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: #4CAF50; /* Color */
+    font-family: Arial, sans-serif; /* Fuente */
+    animation: pulse 1.5s infinite; /* Animación de pulso */
+
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
